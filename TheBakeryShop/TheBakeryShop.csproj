@@ -105,6 +105,11 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="MyContent\Css\footer.css" />
+    <Content Include="MyContent\Css\header.css" />
+    <Content Include="MyContent\Css\home.css" />
+    <Content Include="MyContent\Js\header.js" />
+    <Content Include="MyContent\Js\home.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -146,6 +151,8 @@
     <Content Include="Scripts\bootstrap.esm.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Views\Share\_MainLayout.cshtml" />
+    <Content Include="Views\Home\TrangChu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -156,8 +163,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Home\" />
-    <Folder Include="Views\Share\" />
+    <Folder Include="MyContent\Image\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
