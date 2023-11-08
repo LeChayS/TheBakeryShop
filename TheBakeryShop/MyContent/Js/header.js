@@ -5,15 +5,15 @@ window.addEventListener("scroll", function () {
 })
 
 /* open search */
-const header = document.querySelector(".popup-search"),
+const popSearch = document.querySelector(".popup-search"),
     searchIcon = document.querySelector("#searchIcon"),
     closeIcon = document.querySelector("#closePopup");
 
-    searchIcon.addEventListener("click", function() {
-    header.classList.toggle(".openSearch");
+    searchIcon.addEventListener("click", () => {
+        popSearch.classList.toggle("openSearch");
     });
-    closeIcon.addEventListener("click", function () {
-    header.classList.remove(".openSearch");
+    closeIcon.addEventListener("click", () => {
+        popSearch.classList.remove("openSearch");
     })
 
 /*mb menu collpase*/

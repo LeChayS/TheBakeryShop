@@ -1,9 +1,9 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Merienda&family=Playpen+Sans&display=swap');
 
 body {
-    line-height: 1.5;
-    font-weight: 400;
-    overflow-x: hidden;
+  /*  line-height: 1.5;*/
+    /*font-weight: 400;
+    overflow-x: hidden;*/
     font-family: 'Comfortaa', sans-serif;
 }
 /** {
