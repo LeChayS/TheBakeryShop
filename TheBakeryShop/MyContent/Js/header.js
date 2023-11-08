@@ -5,15 +5,15 @@ window.addEventListener("scroll", function () {
 })
 
 /* open search */
-const header = document.getElementsByClassName("popup-search"),
-    searchIcon = document.getElementById("searchIcon"),
-    closeIcon = document.getElementById("closePopup");
+const header = document.querySelector('.popup-search'),
+    searchIcon = document.querySelector('#searchIcon"),
+    closeIcon = document.querySelector('#closePopup');
 
     searchIcon.addEventListener("click", function() {
-    header.classList.toggle("openSearch");
+    header.classList.toggle('openSearch');
     });
     closeIcon.addEventListener("click", function () {
-    header.classList.remove("openSearch");
+    header.classList.remove('openSearch');
     })
 
 /*mb menu collpase*/
