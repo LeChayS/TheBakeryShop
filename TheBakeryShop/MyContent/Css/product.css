@@ -1,0 +1,154 @@
+/*font-family: 'Comfortaa', sans-serif;
+font-family: 'Merienda', cursive;
+font-family: 'Playpen Sans', cursive;*/
+body{
+	line-height: 1.5;
+	font-weight: 400;
+	overflow-x: hidden;
+	font-family: 'Comfortaa', sans-serif;
+}
+*{
+	margin:0;
+	box-sizing: border-box;
+}
+.container-fluid{
+	max-width: 1400px;
+    margin-top: 10px;
+}
+ul{
+    list-style: none;
+    padding-left: 5px;
+}
+.row .col-lg-3{
+    height: auto;
+    max-width: 300px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.row .col-lg-9{
+    height: auto;
+}
+.row .all-product ul li a,
+.row .all-product ul li ul li a{
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s ease;
+    line-height: 1.9;
+}
+.row .all-product ul li a:hover,
+.row .all-product ul li ul li:hover a{
+    color: peru;
+}
+.row .all-product ul li a i{
+    margin-right: 10px;
+    float: right;
+}
+.row .product-select .all-product{
+    background-color: white;
+    padding: 0;
+    border: 2px solid peru;
+    border-radius: 8px;
+    overflow-x:auto;
+    max-height: 350px;
+}
+.row .product-select .all-product ul li{
+    padding: 7px 5px 0 10px;
+}
+.row .product-select .product-filter{
+    margin-top: 20px;
+    background-color: white;
+    padding: 0;
+    border: 2px solid peru;
+    border-radius: 8px;
+    overflow-x: auto;
+    max-height: 350px;
+}
+.row .product-select .product-filter .list-price{
+    line-height: 1.5;
+    padding: 7px 5px 5px 10px; /*top right bottom left*/
+}
+.row .product-select .all-product .title-pd,
+.row .product-select .product-filter .title-pd{
+    background-color: peru;
+    height: 45px;
+    width: 100%;
+}
+.row .product-select .all-product .title-pd h5,
+.row .product-select .product-filter .title-pd h5{
+    color: white;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    line-height: 45px;
+}
+.row .product-select .product-filter label{
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/*danh sach banh*/
+.row .col-lg-9 .products-list .col-lg-3 .product-bottom h5{
+    font-size: 17px;
+    font-weight: 600;
+}
+.row .col-lg-9 .products-list .col-lg-3 .product-bottom h6{
+    font-size: 17px;
+    padding-bottom: 10px;
+}
+.row .col-lg-9 .products-list .col-lg-3 .product-bottom{
+    margin-top: 5px;
+}
+
+
+
+.row .col-lg-9 .products-list .col-lg-3 .product-top img{
+    height: 200px;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position:center;
+}
+.products-list .product-top .pd-img{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.products-list .product-top .pd-img .pd-img-child{
+    height: 200px;
+    background-size: cover;
+    object-fit: cover;
+    object-position:center;
+    transition: all 1s ease;
+}
+.products-list .product-top .pd-img:hover .pd-img-child{
+    transform: scale(1.1);
+}
+.row .col-lg-3 .product-top .overlay button:hover{
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+.row .col-lg-3 .product-top .overlay{
+    display: block;
+    position: absolute;
+    opacity:0;
+    display: flex;
+    width: 80px;
+    margin: auto;
+}
+.row .col-lg-3 .product-top .overlay button{
+    background-color: peru;
+    border: none;
+    border-radius: 50%;
+    margin-right: 5px;
+    transition: all 0.5s ease;
+}
+.row .col-lg-9 .products-list .col-lg-3 .product-top:hover .overlay{
+    opacity: 1;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-left: 4.5%;
+    transform: translateY(-120%);
+}

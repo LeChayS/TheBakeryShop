@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', sans-serif;
+  }
+  .container-fluid{
+    max-width: 1400px;
+      margin-top: 10px;
+      /* background-color: antiquewhite; */
+  }
+  .row{
+    padding: 0;
+    margin-top: 40px;
+  }
+  .row .col-lg-3{
+    height: auto;
+    /* max-width: 300px;
+    padding-top: 15px;
+    padding-bottom: 15px; */
+}
+.row .col-lg-9{
+    height: auto;
+}
+.container-fluid .row .title{
+  padding: 10px 10px 10px 10px;
+  margin: 0px 0px 0px 0px;/*top right bot left*/
+  /* background-color: red; */
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+/* .container-fluid .row .title .col-lg-2{
+  border-left: 2px solid peru;
+}
+.container-fluid .row .title .col-lg-3{
+  border-left: 2px solid peru;
+}
+.container-fluid .row .title .col-lg-1{
+  border-left: 2px solid peru;
+} */
+
+.container-fluid .row .product{
+  /* display:flex;
+  flex-wrap: wrap; */
+  padding:5px;
+  margin: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  /* border-left: 2px solid rgba(0, 0, 0, 0.2);
+  border-right: 2px solid rgba(0, 0, 0, 0.2); */
+}
+.container-fluid .row .product .product-detail{
+  height: 170px;
+  padding: 10px 0 10px 0;
+  margin: 0;
+  /* width: auto; */
+  /* max-width: 525px; */
+  width: 50%;
+}
+.container-fluid .row .product .product-detail img{
+  margin-left: 10px;
+  width: 110px;
+  height:150px;
+  object-fit: cover;
+  object-position: center;
+}
+.container-fluid .row .product .product-detail .detail{
+  display: inline-block;
+  padding-left: 12px;
+}
+.container-fluid .row .product .quantity .box-qtt input{
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: none;
+  font-size: 20px;
+  text-align: center;
+}
+.container-fluid .row .product .quantity .box-qtt{
+ display: block;
+ text-align: center;
+ padding: 0;
+ /* margin-top: 50px; */
+  margin-top: 40%;
+}
+.container-fluid .row .product .quantity .box-qtt button{
+  border: none;
+  background-color: peru;
+  border-radius: 5px;
+  padding-top:4px;
+  text-align: center;
+}
+.container-fluid .row .product .quantity .box-qtt button i{
+  color: white;
+}
+.container-fluid .row .product .total-money,
+.container-fluid .row .product .delete-btn{
+  text-align: center;
+}
+
+.container-fluid .row .product .total-money h5{
+  color: rgb(202, 8, 8);
+  font-weight: bold;
+  margin-top: 27%;
+}
+.container-fluid .row .product .delete-btn button{
+  margin-top: 95%;
+  border: none;
+  background-color: white;
+  font-size: 25px;
+}
+
+.container-fluid .row .payment .detail-pay{
+  padding: 30px;
+  border: 2px solid peru;
+  
+}
+.container-fluid .row .payment .detail-pay .pay-title{
+  /* background-color: wheat; */
+  padding-bottom: 5px;
+  padding-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.container-fluid .row .payment .detail-pay .pay-title h4{
+  font-weight: bold;
+}
+.container-fluid .row .payment .detail-pay .pay-total{
+  padding-bottom: 5px;
+  padding: 0px 10px 0px 10px;
+  /* padding-top: 5px; */
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  /* display: inline-block; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.container-fluid .row .payment .detail-pay .pay-total h5{
+  font-weight: bold;
+  color: red;
+  font-size: 25px;
+}
+.container-fluid .row .payment .detail-pay .coupon{
+  margin-bottom: 22px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 18px;
+}
+.container-fluid .row .payment .detail-pay .coupon input{
+  width: 73%;
+  height: 40px;
+  padding-left: 10px;
+}
+.container-fluid .row .payment .detail-pay .coupon button{
+  height: 40px;
+  background-color: peru;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  width: 95px;
+  font-weight: 550;
+}
+.container-fluid .row .payment .detail-pay .coupon button:hover{
+  border: 2px solid peru;
+  background-color: white;
+  color: peru;
+}
+.container-fluid .row .payment .detail-pay .btn-buy .pay-now{
+  border: 3px solid peru;
+  background-color: peru;
+  color: white;
+  width: 100%;
+  height: 60px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+  transition: all 0.5s ease;
+}
+.container-fluid .row .payment .detail-pay .btn-buy .ctn-buy{
+  border: 2px solid peru;
+  background-color: white;
+  color:peru;
+  width: 100%;
+  height: 60px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  transition: all 0.5s ease;
+}
+.container-fluid .row .payment .detail-pay .btn-buy .ctn-buy:hover{
+  background-color: peru;
+  color: white;
+}
+.container-fluid .row .payment .detail-pay .btn-buy .pay-now:hover{
+  background-color: rgb(214, 160, 105);
+  color: white;
+}

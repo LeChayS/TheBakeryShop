@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -83,9 +86,6 @@
     <Reference Include="System.Web.Mvc">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -105,9 +105,88 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="MyContent\Css\bg-news.css" />
+    <Content Include="MyContent\Css\cart.css" />
+    <Content Include="MyContent\Css\contact.css" />
     <Content Include="MyContent\Css\footer.css" />
     <Content Include="MyContent\Css\header.css" />
     <Content Include="MyContent\Css\home.css" />
+    <Content Include="MyContent\Css\news.css" />
+    <Content Include="MyContent\Css\newsdetail.css" />
+    <Content Include="MyContent\Css\prodetail.css" />
+    <Content Include="MyContent\Css\product.css" />
+    <Content Include="MyContent\Css\signInOut.css" />
+    <Content Include="MyContent\Image\banh-mi\banh-mi-cha-bong-rong-bien.jpg" />
+    <Content Include="MyContent\Image\banh-mi\banh-mi-cha-bong.jpg" />
+    <Content Include="MyContent\Image\banh-mi\banh-mi-hoa-cuc-bo-toi.jpg" />
+    <Content Include="MyContent\Image\banh-mi\banh-mi-hoa-cuc.jpg" />
+    <Content Include="MyContent\Image\banh-mi\banh-mi-man.jpg" />
+    <Content Include="MyContent\Image\banh-mi\banh-mi-pho-mai-bo-toi.jpg" />
+    <Content Include="MyContent\Image\banh-mi\banh-mi-pho-mai-tan-chay.jpg" />
+    <Content Include="MyContent\Image\banh-mi\banh-mi-sua-hokkaido.jpg" />
+    <Content Include="MyContent\Image\banh-mi\banh-mi-xuc-xich.jpg" />
+    <Content Include="MyContent\Image\banh-mi\banh-sandwich-bo-sua.jpg" />
+    <Content Include="MyContent\Image\banh-mi\banh-sandwich-mix-hat-oc-cho.jpg" />
+    <Content Include="MyContent\Image\banh-mi\banh-sandwich-mix-nho-kho.jpg" />
+    <Content Include="MyContent\Image\banh-mi\banh-sandwich-nguyen-cam.jpg" />
+    <Content Include="MyContent\Image\banh-mi\banh-sandwich-tra-xanh.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\bong-lan\banh-bong-lan-cuon-cha-bong-ga-sot-dau-trung.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\bong-lan\banh-bong-lan-cuon-cha-bong.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\bong-lan\banh-bong-lan-pho-mai.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\bong-lan\banh-bong-lan-socola-cuon-kem.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\bong-lan\banh-bong-lan-truyen-thong.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\cupcake\candy-cupcakes.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\cupcake\chocolate-biscoff-cupcakes.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\cupcake\chocolate-cupcakes.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\cupcake\cookies-cream-cupcakes.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\cupcake\lemon-cupcakes.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\cupcake\red-velvet-cupcakes.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\donut\donut-oreo.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\donut\donut-phu-duong-nhan-kem.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\donut\donut-phu-duong.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\donut\donut-red-velvet.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\donut\donut-socola.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\mousse\chocolate-raspberry-mousse.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\mousse\chocolate-strawberry-mousse.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\mousse\lemon-mousse.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\mousse\mulberry-mousse.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\mousse\raspberry-mousse.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\panna-cotta\panna-cotta-blueberry.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\panna-cotta\panna-cotta-chay-day.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\panna-cotta\panna-cotta-coffee.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\panna-cotta\panna-cotta-mango.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\panna-cotta\panna-cotta-raspberry.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\su-kem\banh-su-kem-gau-vo-gion.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\su-kem\banh-su-kem-mem-matcha.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\su-kem\banh-su-kem-mem-trung.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\su-kem\banh-su-kem-vo-gion-vani-matcha-socola.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\tart-trung.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\tiramisu\coffee-tiramisu.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\tiramisu\lemon-tiramisu.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\tiramisu\matcha-tiramisu.jpg" />
+    <Content Include="MyContent\Image\banh-ngot\tiramisu\strawberry-tiramisu.jpg" />
+    <Content Include="MyContent\Image\banh-sinh-nhat\banh-kem-cau-vong.jpg" />
+    <Content Include="MyContent\Image\banh-sinh-nhat\banh-kem-con-nhen-cute.jpg" />
+    <Content Include="MyContent\Image\banh-sinh-nhat\banh-kem-cuu-mini.jpg" />
+    <Content Include="MyContent\Image\banh-sinh-nhat\banh-kem-gau-nho.jpg" />
+    <Content Include="MyContent\Image\banh-sinh-nhat\banh-kem-happy.jpg" />
+    <Content Include="MyContent\Image\banh-sinh-nhat\banh-kem-khung-long.jpg" />
+    <Content Include="MyContent\Image\banh-sinh-nhat\banh-kem-no-hong.jpg" />
+    <Content Include="MyContent\Image\banh-sinh-nhat\banh-kem-shin-cau-be-but-chi.jpg" />
+    <Content Include="MyContent\Image\banh-sinh-nhat\banh-kem-shin.jpg" />
+    <Content Include="MyContent\Image\banh-sinh-nhat\banh-kem-trai-cay.jpg" />
+    <Content Include="MyContent\Image\banh-theo-mua\banh-kem-mini-halloween.jpg" />
+    <Content Include="MyContent\Image\banh-theo-mua\banh-quy-halloween.jpg" />
+    <Content Include="MyContent\Image\banh-theo-mua\chocolate-halloween-cupcakes.jpg" />
+    <Content Include="MyContent\Image\banh-theo-mua\donut-halloween-ghost.jpg" />
+    <Content Include="MyContent\Image\banh-theo-mua\donut-halloween.jpg" />
+    <Content Include="MyContent\Image\banh-theo-mua\macaron-halloween.jpg" />
+    <Content Include="MyContent\Image\banh-theo-mua\mousse-halloween.jpg" />
+    <Content Include="MyContent\Image\banh-theo-mua\tiramisu-halloween.jpg" />
+    <Content Include="MyContent\Image\cupcake-bg.jpg" />
+    <Content Include="MyContent\Image\demologo.jpg" />
+    <Content Include="MyContent\Image\divider.jpg" />
+    <Content Include="MyContent\Js\cart.js" />
     <Content Include="MyContent\Js\header.js" />
     <Content Include="MyContent\Js\home.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -120,7 +199,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -153,6 +236,12 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Views\Share\_MainLayout.cshtml" />
     <Content Include="Views\Home\TrangChu.cshtml" />
+    <Content Include="Views\Product\SanPham.cshtml" />
+    <Content Include="Views\News\TinTuc.cshtml" />
+    <Content Include="Views\Contact\LienHe.cshtml" />
+    <Content Include="Views\Product\GioHang.cshtml" />
+    <Content Include="Views\News\ChiTietTinTuc.cshtml" />
+    <Content Include="Views\Product\ChiTietSanPham.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -163,7 +252,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="MyContent\Image\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
