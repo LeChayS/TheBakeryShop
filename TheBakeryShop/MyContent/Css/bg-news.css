@@ -1,7 +1,7 @@
 .bg-news{
     height: 300px;
     width: 100%;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Image/cupcake-bg.jpg");
@@ -16,5 +16,6 @@
     /* Black w/opacity/see-through */
     color: peru;
     font-weight: bold;
-  
+    text-align:center;
+    line-height:300px;
   }

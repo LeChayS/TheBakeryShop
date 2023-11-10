@@ -148,7 +148,7 @@
   color: red;
   font-size: 25px;
 }
-.container-fluid .row .payment .detail-pay .coupon{
+/*.container-fluid .row .payment .detail-pay .coupon{
   margin-bottom: 22px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding-bottom: 18px;
@@ -171,7 +171,7 @@
   border: 2px solid peru;
   background-color: white;
   color: peru;
-}
+}*/
 .container-fluid .row .payment .detail-pay .btn-buy .pay-now{
   border: 3px solid peru;
   background-color: peru;

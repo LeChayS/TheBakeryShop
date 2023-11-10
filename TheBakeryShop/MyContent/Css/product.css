@@ -28,12 +28,17 @@ ul{
 .row .col-lg-9{
     height: auto;
 }
-.row .all-product ul li a,
+.row .all-product ul li a{
+    color:peru;
+    font-weight:bold;
+    text-decoration:none;
+}
 .row .all-product ul li ul li a{
     text-decoration: none;
     color: black;
     transition: all 0.3s ease;
     line-height: 1.9;
+    font-weight:normal;
 }
 .row .all-product ul li a:hover,
 .row .all-product ul li ul li:hover a{
@@ -48,8 +53,14 @@ ul{
     padding: 0;
     border: 2px solid peru;
     border-radius: 8px;
-    overflow-x:auto;
     max-height: 350px;
+}
+.row .product-select .all-product .all-pro {
+    overflow-x: auto;
+    max-height: 300px;
+}
+.row .product-select .all-product ul{
+    padding-left:10px ; 
 }
 .row .product-select .all-product ul li{
     padding: 7px 5px 0 10px;
@@ -60,9 +71,12 @@ ul{
     padding: 0;
     border: 2px solid peru;
     border-radius: 8px;
-    overflow-x: auto;
     max-height: 350px;
 }
+    .row .product-select .product-filter .list-price {
+        overflow-x: auto;
+        max-height: 300px;
+    }
 .row .product-select .product-filter .list-price{
     line-height: 1.5;
     padding: 7px 5px 5px 10px; /*top right bottom left*/
@@ -96,7 +110,8 @@ ul{
     padding-bottom: 10px;
 }
 .row .col-lg-9 .products-list .col-lg-3 .product-bottom{
-    margin-top: 5px;
+    position:relative;
+    top:-30px;
 }
 
 
@@ -123,32 +138,36 @@ ul{
     object-position:center;
     transition: all 1s ease;
 }
+.row .col-lg-3 .product-top .overlay button:hover,
 .products-list .product-top .pd-img:hover .pd-img-child{
     transform: scale(1.1);
-}
-.row .col-lg-3 .product-top .overlay button:hover{
     opacity: 0.8;
-    transform: scale(1.1);
-  }
+}
 .row .col-lg-3 .product-top .overlay{
+    text-align:center;
     display: block;
     position: absolute;
-    opacity:0;
-    display: flex;
-    width: 80px;
+    opacity: 0;
+    visibility: hidden;
+    /*display: flex;*/
+    width: auto;
     margin: auto;
+    position: relative;
+    bottom: 30px;
 }
 .row .col-lg-3 .product-top .overlay button{
     background-color: peru;
     border: none;
     border-radius: 50%;
-    margin-right: 5px;
+    /*margin-right: 5px;*/
     transition: all 0.5s ease;
+    font-size: 20px;
 }
 .row .col-lg-9 .products-list .col-lg-3 .product-top:hover .overlay{
     opacity: 1;
-    position: absolute;
+    visibility: visible;
+    /*position: absolute;*/
     transition: all 0.5s ease;
-    margin-left: 4.5%;
-    transform: translateY(-120%);
+    /*margin-left: 5%;*/
+    transform: translateY(-55%);
 }

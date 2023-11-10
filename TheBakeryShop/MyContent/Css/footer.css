@@ -116,6 +116,9 @@ font-family: 'Playpen Sans', cursive;*/
     .footer-col a {
         font-size: 20px;
     }
+    .container .col-lg-4{
+        padding-right:50px;
+    }
 
 /*responsive*/
 @media(max-width: 767px) {

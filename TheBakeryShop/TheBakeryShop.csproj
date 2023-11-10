@@ -184,8 +184,10 @@
     <Content Include="MyContent\Image\banh-theo-mua\mousse-halloween.jpg" />
     <Content Include="MyContent\Image\banh-theo-mua\tiramisu-halloween.jpg" />
     <Content Include="MyContent\Image\cupcake-bg.jpg" />
-    <Content Include="MyContent\Image\demologo.jpg" />
     <Content Include="MyContent\Image\divider.jpg" />
+    <Content Include="MyContent\Image\logo.png" />
+    <Content Include="MyContent\Image\social-md\fb.png" />
+    <Content Include="MyContent\Image\social-md\gg.png" />
     <Content Include="MyContent\Js\cart.js" />
     <Content Include="MyContent\Js\header.js" />
     <Content Include="MyContent\Js\home.js" />

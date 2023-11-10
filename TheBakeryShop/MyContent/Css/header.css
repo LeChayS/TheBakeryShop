@@ -26,10 +26,11 @@ body {
 }
 ul {
     list-style: none;
+    text-decoration:none;
     margin: 0;
     padding: 0;
 }
-a {
+.header a {
     text-decoration: none;
 }
 
@@ -40,6 +41,7 @@ a {
     position: relative;
     z-index: 99;
     padding: 15px;
+    float:right;
     /*sticky nav*/
     background-color: transparent;
     position: fixed;
@@ -61,6 +63,13 @@ a {
     display: flex;
     justify-content: flex-end;
 }
+/*.header .item-left .logo a {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    line-height: 50px;
+}*/
 .header .item-right i {
     text-decoration: none;
     font-size: 23px;
@@ -427,6 +436,7 @@ a {
     visibility: hidden;
     transition: all 0.5s ease;
     margin-top: -500px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .popup-search.openSearch {
@@ -700,11 +710,11 @@ a {
     transition: all 0.5s ease;
 }
 
-.cart-sidebar .cart-title h4 {
+.cart-sidebar .cart-title h4{
     font-size: 20px;
     font-weight: bold;
     padding: 40px 30px 20px;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid black;
 }
 
 .cart-sidebar .cart-body {
@@ -762,10 +772,10 @@ a {
     cursor: pointer;
     }
 
-.cart-sidebar .button-pay {
+.cart-sidebar .button-pay{
     margin-top: 10px;
     width: 350px;
-    border-top: 2px solid rgba(0, 0, 0, 0.5);
+    border-top: 2px solid black;
     padding-top: 10px;
 }
 
