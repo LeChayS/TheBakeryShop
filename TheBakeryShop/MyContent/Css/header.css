@@ -161,10 +161,9 @@ ul {
 .header .menu > ul > li .sub-menu.mega-menu > .list-item > ul > li > a:hover,
 .header .menu > ul > li .sub-menu > ul > li > a:hover,
 .header .item-right i:hover,
-.header .menu > ul > li:hover > a {
+.header .menu > ul > li:hover > a{
     color: peru;
 }
-
 .mobile-menu-head,
 .mobile-menu-trigger,
 .header .menu-log {

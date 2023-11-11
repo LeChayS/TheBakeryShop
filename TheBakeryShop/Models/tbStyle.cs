@@ -12,25 +12,18 @@ namespace TheBakeryShop.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class product
+    public partial class tbStyle
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public product()
+        public tbStyle()
         {
-            this.detailBills = new HashSet<detailBill>();
+            this.tbProducts = new HashSet<tbProduct>();
         }
     
-        public string codePro { get; set; }
-        public string namePro { get; set; }
-        public string descriptionPro { get; set; }
-        public Nullable<double> price { get; set; }
-        public string size { get; set; }
-        public string image { get; set; }
-        public string state { get; set; }
         public string codeStyle { get; set; }
+        public string nameStyle { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<detailBill> detailBills { get; set; }
-        public virtual style style { get; set; }
+        public virtual ICollection<tbProduct> tbProducts { get; set; }
     }
 }

@@ -1,8 +1,10 @@
-﻿
+﻿@model IEnumerable<TheBakeryShop.Models.tbProduct>
+
 @{
     ViewBag.Title = "Sản phẩm";
     Layout = "~/Views/Share/_MainLayout.cshtml";
 }
+
 <link href="~/MyContent/Css/product.css" rel="stylesheet" />
 <link href="~/MyContent/Css/bg-news.css" rel="stylesheet" />
 
@@ -111,283 +113,37 @@
 
             <div class="row products-list">
 
-                <div class="col-lg-3">
-                    <div class="product-top">
+                @foreach (var pro in Model)
+                {
+                    <div class="col-lg-3">
 
-                        <div class="pd-img">
-                            <div class="pd-img-child">
-                                <img src="~/MyContent/Image/banh-ngot/bong-lan/banh-bong-lan-cuon-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
+                        <div class="product-top">
+
+                            <div class="pd-img">
+                                <div class="pd-img-child">
+                                    <img src="@Url.Content(pro.imagePro)" alt="list-ck" class="img" style="width:100%" />
+                                </div>
+                            </div>
+
+                            <div class="overlay">
+                                <button type="button" class="btn btn-secondary" title="quick shop">
+                                    <a href="@Url.Action("ChiTietSanPham", "Product")" style="text-decoration:none;color:white;">
+                                        <i class="fi fi-br-search search-icon"></i>
+                                    </a>
+                                </button>
+                                <button type="button" class="btn btn-secondary" title="quick shop">
+                                    <a href="@Url.Action("GioHang", "Product")" style="text-decoration:none;color:white;">
+                                        <i class="fi fi-br-shopping-cart cart-icon"></i>
+                                    </a>
+                                </button>
                             </div>
                         </div>
-
-                        <div class="overlay">
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-search search-icon"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-shopping-cart cart-icon"></i>
-                            </button>
+                        <div class="product-bottom text-center">
+                            <h5>@Html.DisplayFor(Model => pro.namePro)</h5>
+                            <h6>@Html.DisplayFor(Model => pro.pricePro)đ</h6>
                         </div>
                     </div>
-                    <div class="product-bottom text-center">
-                        <h5>Bánh bông lan cuộn chà bông</h5>
-                        <h6>50.000đ</h6>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="product-top">
-                        <div class="pd-img">
-                            <div class="pd-img-child">
-                                <img src="~/MyContent/Image/banh-ngot/bong-lan/banh-bong-lan-cuon-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
-                            </div>
-                        </div>
-                        <div class="overlay">
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-search search-icon"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-shopping-cart cart-icon"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <h5>Bánh bông lan cuộn chà bông</h5>
-                        <h6>50.000đ</h6>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="product-top">
-                        <div class="pd-img">
-                            <div class="pd-img-child">
-                                <img src="~/MyContent/Image/banh-ngot/bong-lan/banh-bong-lan-cuon-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
-                            </div>
-                        </div>
-                        <div class="overlay">
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-search search-icon"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-shopping-cart cart-icon"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <h5>Bánh bông lan cuộn chà bông</h5>
-                        <h6>50.000đ</h6>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="product-top">
-                        <div class="pd-img">
-                            <div class="pd-img-child">
-                                <img src="~/MyContent/Image/banh-ngot/bong-lan/banh-bong-lan-cuon-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
-                            </div>
-                        </div>
-                        <div class="overlay">
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-search search-icon"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-shopping-cart cart-icon"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <h5>Bánh bông lan cuộn chà bông</h5>
-                        <h6>50.000đ</h6>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row products-list">
-
-                <div class="col-lg-3">
-                    <div class="product-top">
-
-                        <div class="pd-img">
-                            <div class="pd-img-child">
-                                <img src="~/MyContent/Image/banh-ngot/bong-lan/banh-bong-lan-cuon-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
-                            </div>
-                        </div>
-
-                        <div class="overlay">
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-search search-icon"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-shopping-cart cart-icon"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <h5>Bánh bông lan cuộn chà bông</h5>
-                        <h6>50.000đ</h6>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="product-top">
-                        <div class="pd-img">
-                            <div class="pd-img-child">
-                                <img src="~/MyContent/Image/banh-ngot/bong-lan/banh-bong-lan-cuon-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
-                            </div>
-                        </div>
-                        <div class="overlay">
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-search search-icon"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-shopping-cart cart-icon"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <h5>Bánh bông lan cuộn chà bông</h5>
-                        <h6>50.000đ</h6>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="product-top">
-                        <div class="pd-img">
-                            <div class="pd-img-child">
-                                <img src="~/MyContent/Image/banh-ngot/bong-lan/banh-bong-lan-cuon-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
-                            </div>
-                        </div>
-                        <div class="overlay">
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-search search-icon"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-shopping-cart cart-icon"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <h5>Bánh bông lan cuộn chà bông</h5>
-                        <h6>50.000đ</h6>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="product-top">
-                        <div class="pd-img">
-                            <div class="pd-img-child">
-                                <img src="~/MyContent/Image/banh-ngot/bong-lan/banh-bong-lan-cuon-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
-                            </div>
-                        </div>
-                        <div class="overlay">
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-search search-icon"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-shopping-cart cart-icon"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <h5>Bánh bông lan cuộn chà bông</h5>
-                        <h6>50.000đ</h6>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row products-list">
-
-                <div class="col-lg-3">
-                    <div class="product-top">
-
-                        <div class="pd-img">
-                            <div class="pd-img-child">
-                                <img src="~/MyContent/Image/banh-ngot/bong-lan/banh-bong-lan-cuon-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
-                            </div>
-                        </div>
-
-                        <div class="overlay">
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-search search-icon"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-shopping-cart cart-icon"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <h5>Bánh bông lan cuộn chà bông</h5>
-                        <h6>50.000đ</h6>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="product-top">
-                        <div class="pd-img">
-                            <div class="pd-img-child">
-                                <img src="~/MyContent/Image/banh-ngot/bong-lan/banh-bong-lan-cuon-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
-                            </div>
-                        </div>
-                        <div class="overlay">
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-search search-icon"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-shopping-cart cart-icon"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <h5>Bánh bông lan cuộn chà bông</h5>
-                        <h6>50.000đ</h6>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="product-top">
-                        <div class="pd-img">
-                            <div class="pd-img-child">
-                                <img src="~/MyContent/Image/banh-ngot/bong-lan/banh-bong-lan-cuon-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
-                            </div>
-                        </div>
-                        <div class="overlay">
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-search search-icon"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-shopping-cart cart-icon"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <h5>Bánh bông lan cuộn chà bông</h5>
-                        <h6>50.000đ</h6>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="product-top">
-                        <div class="pd-img">
-                            <div class="pd-img-child">
-                                <img src="~/MyContent/Image/banh-ngot/bong-lan/banh-bong-lan-cuon-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
-                            </div>
-                        </div>
-                        <div class="overlay">
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-search search-icon"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <i class="fi fi-br-shopping-cart cart-icon"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <h5>Bánh bông lan cuộn chà bông</h5>
-                        <h6>50.000đ</h6>
-                    </div>
-                </div>
+                }
 
             </div>
 

@@ -12,7 +12,7 @@ namespace TheBakeryShop.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class detailBill
+    public partial class tbDetailBill
     {
         public int idBill { get; set; }
         public string codePro { get; set; }
@@ -20,7 +20,7 @@ namespace TheBakeryShop.Models
         public Nullable<double> totalMoney { get; set; }
         public Nullable<double> priceProBuying { get; set; }
     
-        public virtual bill bill { get; set; }
-        public virtual product product { get; set; }
+        public virtual tbBill tbBill { get; set; }
+        public virtual tbProduct tbProduct { get; set; }
     }
 }

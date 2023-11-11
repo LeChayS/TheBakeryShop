@@ -4,17 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c6779025583e46f3a5f90b704627d42a" Name="Diagram1">
-        <EntityTypeShape EntityType="TheBakeryShopModel.bill" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheBakeryShopModel.customer" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheBakeryShopModel.detailBill" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheBakeryShopModel.product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheBakeryShopModel.style" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TheBakeryShopModel.tlb_user" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="TheBakeryShopModel.FK__bill__codeCus__52593CB8" ManuallyRouted="false" />
-        <AssociationConnector Association="TheBakeryShopModel.FK__detailBil__idBil__5535A963" ManuallyRouted="false" />
-        <AssociationConnector Association="TheBakeryShopModel.FK__detailBil__codeP__5629CD9C" ManuallyRouted="false" />
-        <AssociationConnector Association="TheBakeryShopModel.FK__product__codeSty__4F7CD00D" ManuallyRouted="false" />
+      <Diagram DiagramId="a45943246d214fd087ca0e779d477aa9" Name="Diagram1">
+        <EntityTypeShape EntityType="DBBakeryShopModel.tbBill" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBBakeryShopModel.tbCustomer" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBBakeryShopModel.tbDetailBill" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBBakeryShopModel.tbProduct" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBBakeryShopModel.tbStyle" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBBakeryShopModel.tbUser" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="DBBakeryShopModel.FK__tbBill__idUser__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBBakeryShopModel.FK__tbDetailB__idBil__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="DBBakeryShopModel.FK__tbUser__codeCus__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="DBBakeryShopModel.FK__tbDetailB__codeP__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="DBBakeryShopModel.FK__tbProduct__codeS__5070F446" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

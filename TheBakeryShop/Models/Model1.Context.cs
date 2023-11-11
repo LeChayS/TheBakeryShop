@@ -13,10 +13,10 @@ namespace TheBakeryShop.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TheBakeryShopEntities : DbContext
+    public partial class DBBakeryShopEntities : DbContext
     {
-        public TheBakeryShopEntities()
-            : base("name=TheBakeryShopEntities")
+        public DBBakeryShopEntities()
+            : base("name=DBBakeryShopEntities")
         {
         }
     
@@ -25,11 +25,11 @@ namespace TheBakeryShop.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<bill> bills { get; set; }
-        public virtual DbSet<customer> customers { get; set; }
-        public virtual DbSet<detailBill> detailBills { get; set; }
-        public virtual DbSet<product> products { get; set; }
-        public virtual DbSet<style> styles { get; set; }
-        public virtual DbSet<tlb_user> tlb_user { get; set; }
+        public virtual DbSet<tbBill> tbBills { get; set; }
+        public virtual DbSet<tbCustomer> tbCustomers { get; set; }
+        public virtual DbSet<tbDetailBill> tbDetailBills { get; set; }
+        public virtual DbSet<tbProduct> tbProducts { get; set; }
+        public virtual DbSet<tbStyle> tbStyles { get; set; }
+        public virtual DbSet<tbUser> tbUsers { get; set; }
     }
 }

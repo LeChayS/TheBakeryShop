@@ -9,7 +9,15 @@ namespace TheBakeryShop.Controllers
     public class UserController : Controller
     {
         // GET: User
-        public ActionResult Index()
+        public ActionResult ThongTin()
+        {
+            return View();
+        }
+        public ActionResult DangNhap()
+        {
+            return View();
+        }
+        public ActionResult DangKy()
         {
             return View();
         }

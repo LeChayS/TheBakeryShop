@@ -12,11 +12,22 @@ namespace TheBakeryShop.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tlb_user
+    public partial class tbUser
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tbUser()
+        {
+            this.tbBills = new HashSet<tbBill>();
+        }
+    
         public int idUser { get; set; }
         public string userName { get; set; }
         public string userPass { get; set; }
         public string userRole { get; set; }
+        public string codeCus { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbBill> tbBills { get; set; }
+        public virtual tbCustomer tbCustomer { get; set; }
     }
 }

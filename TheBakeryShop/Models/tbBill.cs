@@ -12,21 +12,21 @@ namespace TheBakeryShop.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class customer
+    public partial class tbBill
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public customer()
+        public tbBill()
         {
-            this.bills = new HashSet<bill>();
+            this.tbDetailBills = new HashSet<tbDetailBill>();
         }
     
-        public string codeCus { get; set; }
-        public string nameCus { get; set; }
-        public string address { get; set; }
-        public string phone { get; set; }
-        public string email { get; set; }
+        public int idBill { get; set; }
+        public Nullable<System.DateTime> billDate { get; set; }
+        public int idUser { get; set; }
+        public Nullable<double> totalBuy { get; set; }
     
+        public virtual tbUser tbUser { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<bill> bills { get; set; }
+        public virtual ICollection<tbDetailBill> tbDetailBills { get; set; }
     }
 }

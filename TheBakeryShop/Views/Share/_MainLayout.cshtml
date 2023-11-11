@@ -30,7 +30,7 @@
 
 </head>
 <body>
-    
+
     <div class="popup-search" style="height: 100px;">
         <div class="container">
             <div class="search-wrap">
@@ -52,7 +52,7 @@
             <div class="row v-center">
                 <div class="header-item item-left">
                     <div class="logo">
-                        <a href="#"><img src="~/MyContent/Image/logo.png" style="height: 70px;"/></a>
+                        <a href="@Url.Action("TrangChu","Home")"><img src="~/MyContent/Image/logo.png" style="height: 70px;" /></a>
                         @*<img src="../media/demologo.jpg" alt="logo" style="height: 70px;" class="rounded-pill">*@
                     </div>
                 </div>
@@ -68,10 +68,11 @@
                         </div>
                         <ul class="menu-main">
                             <li>
-                                <a href="#">@Html.ActionLink("Trang chủ", "TrangChu", "Home")</a>
+                                <a href="@Url.Action("TrangChu","Home")">Trang chủ</a>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="@Html.ActionLink("Sản phẩm","SanPham","Product")" style="text-decoration:none;">Sản phẩm <i class="fi fi-br-angle-down" style="font-size: 17px;"></i></a>
+                                <a href="@Url.Action("SanPham","Product")" style="text-decoration:none;">Sản phẩm <i class="fi fi-br-angle-down" style="font-size:18px"></i></a>
+
                                 <div class="sub-menu mega-menu mega-menu-column-4">
                                     <div class="list-item">
                                         <h4 class="title"><a href="#">Bánh ngọt</a></h4>
@@ -115,16 +116,16 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="@Html.ActionLink("Tin tức","TinTuc","News")">Tin tức</a>
+                                <a href="@Url.Action("TinTuc","News")">Tin tức</a>
                             </li>
                             <li>
-                                <a href="@Html.ActionLink("Liên hệ","LienHe","Contact")">Liên hệ</a>
+                                <a href="@Url.Action("LienHe","Contact")">Liên hệ</a>
                             </li>
                             <li>
                                 <div class="menu-log">
                                     <div class="mn-log">
-                                        <button type="button" class="signin">Đăng nhập</button>
-                                        <button type="button" class="register">Đăng ký</button>
+                                        <button type="button" class="signin" >@Html.ActionLink("Đăng nhập", "DangNhap", "User")</button>
+                                        <button type="button" class="register" >@Html.ActionLink("Đăng ký", "DangKy", "User")</button>
                                     </div>
 
                                 </div>
@@ -150,15 +151,15 @@
     <div class="popup">
         <div class="popup-inner">
             <div class="img">
-                <img src="~/MyContent/Image/cupcake-bg.jpg" alt="bg"/>
+                <img src="~/MyContent/Image/cupcake-bg.jpg" alt="bg" />
             </div>
             <div class="text">
                 <div class="closePopup"><i class="fi fi-br-cross"></i></div>
                 <div class="group">
                     <div class="log">
-                        <button type="button" class="signin">Đăng nhập</button>
+                        <button type="button" class="signin">@Html.ActionLink("Đăng nhập", "DangNhap", "User")</button>
                         <h3><span>Hoặc</span></h3>
-                        <button type="button" class="register">Đăng ký</button>
+                        <button type="button" class="register">@Html.ActionLink("Đăng ký", "DangKy", "User")</button>
                     </div>
                     <h3><span>Hoặc đăng nhập bằng</span></h3>
                     <div class="social-md">
@@ -216,33 +217,32 @@
         @RenderBody()
     </div>
 
-    <footer class="footer">
+    <div class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 footer-col">
-                    <a href="#"><img src="~/MyContent/Image/logo.png" height="150"/></a>
-                    <p>
-                        Gửi lời chào của tiệm bánh The Bakery đến với khách hàng, chúc khách hàng có khoảng
-                        thời gian tốt đẹp ở đây
-                    </p>
+                <div class="col-lg-3 dm-menu">
+                    <h3>Danh mục</h3>
+                    <a href="@Url.Action("TrangChu","Home")">Trang chủ</a>
+                    <a href="@Url.Action("SanPham","Product")">Sản phẩm</a>
+                    <a href="@Url.Action("TinTuc","News")">Tin tức</a>
+                    <a href="@Url.Action("LienHe","Contact")">Liên hệ</a>
                 </div>
-                <div class="col-lg-2 footer-col">
-                    <h4>Liên kết</h4>
-                    <ul>
-                        <li><a href="#">Trang chủ</a></li>
-                        <li><a href="#">Sản phẩm</a></li>
-                        <li><a href="#">Tin tức</a></li>
-                        <li><a href="#">Liên hệ</a></li>
-                    </ul>
+                <div class="col-lg-6 mail-logo">
+                    <div class="logo-content">
+                        <img src="~/MyContent/Image/logo.png" alt="logo" style="height: 130px;">
+                        <p>Đăng ký nhận thông tin sản phẩm mới nhất, tin khuyến mãi và nhiều hơn nữa.</p>
+                    </div>
+                    <form action="">
+                        <input type="email" name="" id="" placeholder="Nhập email của bạn" required>
+                        <br>
+                        <button type="submit">Đăng ký</button>
+                    </form>
                 </div>
-                <div class="col-lg-3 footer-col">
-                    <h4>Thông tin chung</h4>
+                <div class="col-lg-3 social">
+                    <h3>Thông tin liên hệ</h3>
                     <p>Địa chỉ: <a href="#">828 Sư Vạn Hạnh, Phường 13, Quận 10, TP. HCM</a></p>
-                    <p>Điện thoại: <a href="#">(028) 3863 2052 - (028) 3862 9232</a></p>
+                    <p>Điện thoại: <a href="#">(028) 3863 2052</a> - <a href="#">(028) 3862 9232</a></p>
                     <p>Email: <a href="#">contact@huflit.edu.vn</a></p>
-                </div>
-                <div class="col-lg-3 footer-col">
-                    <h4>Mạng xã hội</h4>
                     <div class="social-link">
                         <a href="https://www.facebook.com/huflit.edu.vn" target="_blank"><i class="fi fi-brands-facebook"></i></a>
                         <a href="#" target="_blank"><i class="fi fi-brands-youtube"></i></a>
@@ -251,8 +251,7 @@
                 </div>
             </div>
         </div>
-    </footer>
- 
+    </div>
 
 </body>
 </html>
