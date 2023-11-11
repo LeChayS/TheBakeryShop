@@ -68,10 +68,10 @@
                         </div>
                         <ul class="menu-main">
                             <li>
-                                <a href="#">Trang chủ</a>
+                                <a href="#">@Html.ActionLink("Trang chủ", "TrangChu", "Home")</a>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="#" style="text-decoration:none;">Sản phẩm <i class="fi fi-br-angle-down" style="font-size: 17px;"></i></a>
+                                <a href="@Html.ActionLink("Sản phẩm","SanPham","Product")" style="text-decoration:none;">Sản phẩm <i class="fi fi-br-angle-down" style="font-size: 17px;"></i></a>
                                 <div class="sub-menu mega-menu mega-menu-column-4">
                                     <div class="list-item">
                                         <h4 class="title"><a href="#">Bánh ngọt</a></h4>
@@ -115,10 +115,10 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="#">Tin tức</a>
+                                <a href="@Html.ActionLink("Tin tức","TinTuc","News")">Tin tức</a>
                             </li>
                             <li>
-                                <a href="#">Liên hệ</a>
+                                <a href="@Html.ActionLink("Liên hệ","LienHe","Contact")">Liên hệ</a>
                             </li>
                             <li>
                                 <div class="menu-log">

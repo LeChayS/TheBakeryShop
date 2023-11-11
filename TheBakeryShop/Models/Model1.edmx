@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TheBakeryShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="bill">
+          <Key>
+            <PropertyRef Name="idBill" />
+          </Key>
+          <Property Name="idBill" Type="int" Nullable="false" />
+          <Property Name="billDate" Type="date" />
+          <Property Name="idUser" Type="int" Nullable="false" />
+          <Property Name="totalBuy" Type="float" />
+          <Property Name="codeCus" Type="char" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="codeCus" />
+          </Key>
+          <Property Name="codeCus" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="nameCus" Type="nvarchar" MaxLength="150" />
+          <Property Name="address" Type="nvarchar" MaxLength="150" />
+          <Property Name="phone" Type="char" MaxLength="10" />
+          <Property Name="email" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="detailBill">
+          <Key>
+            <PropertyRef Name="idBill" />
+            <PropertyRef Name="codePro" />
+          </Key>
+          <Property Name="idBill" Type="int" Nullable="false" />
+          <Property Name="codePro" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="quantityPro" Type="int" />
+          <Property Name="totalMoney" Type="float" />
+          <Property Name="priceProBuying" Type="float" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="codePro" />
+          </Key>
+          <Property Name="codePro" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="namePro" Type="nvarchar" MaxLength="100" />
+          <Property Name="descriptionPro" Type="nvarchar(max)" />
+          <Property Name="price" Type="float" />
+          <Property Name="size" Type="nvarchar" MaxLength="50" />
+          <Property Name="image" Type="nvarchar(max)" />
+          <Property Name="state" Type="nvarchar" MaxLength="100" />
+          <Property Name="codeStyle" Type="char" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="style">
+          <Key>
+            <PropertyRef Name="codeStyle" />
+          </Key>
+          <Property Name="codeStyle" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="nameStyle" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tlb_user">
+          <Key>
+            <PropertyRef Name="idUser" />
+          </Key>
+          <Property Name="idUser" Type="int" Nullable="false" />
+          <Property Name="userName" Type="nvarchar" MaxLength="100" />
+          <Property Name="userPass" Type="nvarchar(max)" />
+          <Property Name="userRole" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__bill__codeCus__52593CB8">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="bill" Type="Self.bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="codeCus" />
+            </Principal>
+            <Dependent Role="bill">
+              <PropertyRef Name="codeCus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detailBil__codeP__5629CD9C">
+          <End Role="product" Type="Self.product" Multiplicity="1" />
+          <End Role="detailBill" Type="Self.detailBill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="codePro" />
+            </Principal>
+            <Dependent Role="detailBill">
+              <PropertyRef Name="codePro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detailBil__idBil__5535A963">
+          <End Role="bill" Type="Self.bill" Multiplicity="1" />
+          <End Role="detailBill" Type="Self.detailBill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bill">
+              <PropertyRef Name="idBill" />
+            </Principal>
+            <Dependent Role="detailBill">
+              <PropertyRef Name="idBill" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__product__codeSty__4F7CD00D">
+          <End Role="style" Type="Self.style" Multiplicity="1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="style">
+              <PropertyRef Name="codeStyle" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="codeStyle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TheBakeryShopModelStoreContainer">
+          <EntitySet Name="bill" EntityType="Self.bill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="detailBill" EntityType="Self.detailBill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="product" EntityType="Self.product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="style" EntityType="Self.style" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tlb_user" EntityType="Self.tlb_user" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__bill__codeCus__52593CB8" Association="Self.FK__bill__codeCus__52593CB8">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="bill" EntitySet="bill" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detailBil__codeP__5629CD9C" Association="Self.FK__detailBil__codeP__5629CD9C">
+            <End Role="product" EntitySet="product" />
+            <End Role="detailBill" EntitySet="detailBill" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detailBil__idBil__5535A963" Association="Self.FK__detailBil__idBil__5535A963">
+            <End Role="bill" EntitySet="bill" />
+            <End Role="detailBill" EntitySet="detailBill" />
+          </AssociationSet>
+          <AssociationSet Name="FK__product__codeSty__4F7CD00D" Association="Self.FK__product__codeSty__4F7CD00D">
+            <End Role="style" EntitySet="style" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TheBakeryShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="bill">
+          <Key>
+            <PropertyRef Name="idBill" />
+          </Key>
+          <Property Name="idBill" Type="Int32" Nullable="false" />
+          <Property Name="billDate" Type="DateTime" Precision="0" />
+          <Property Name="idUser" Type="Int32" Nullable="false" />
+          <Property Name="totalBuy" Type="Double" />
+          <Property Name="codeCus" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="customer" Relationship="Self.FK__bill__codeCus__52593CB8" FromRole="bill" ToRole="customer" />
+          <NavigationProperty Name="detailBills" Relationship="Self.FK__detailBil__idBil__5535A963" FromRole="bill" ToRole="detailBill" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="codeCus" />
+          </Key>
+          <Property Name="codeCus" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="nameCus" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="bills" Relationship="Self.FK__bill__codeCus__52593CB8" FromRole="customer" ToRole="bill" />
+        </EntityType>
+        <EntityType Name="detailBill">
+          <Key>
+            <PropertyRef Name="idBill" />
+            <PropertyRef Name="codePro" />
+          </Key>
+          <Property Name="idBill" Type="Int32" Nullable="false" />
+          <Property Name="codePro" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="quantityPro" Type="Int32" />
+          <Property Name="totalMoney" Type="Double" />
+          <Property Name="priceProBuying" Type="Double" />
+          <NavigationProperty Name="bill" Relationship="Self.FK__detailBil__idBil__5535A963" FromRole="detailBill" ToRole="bill" />
+          <NavigationProperty Name="product" Relationship="Self.FK__detailBil__codeP__5629CD9C" FromRole="detailBill" ToRole="product" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="codePro" />
+          </Key>
+          <Property Name="codePro" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="namePro" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="descriptionPro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Double" />
+          <Property Name="size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="state" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="codeStyle" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="detailBills" Relationship="Self.FK__detailBil__codeP__5629CD9C" FromRole="product" ToRole="detailBill" />
+          <NavigationProperty Name="style" Relationship="Self.FK__product__codeSty__4F7CD00D" FromRole="product" ToRole="style" />
+        </EntityType>
+        <EntityType Name="style">
+          <Key>
+            <PropertyRef Name="codeStyle" />
+          </Key>
+          <Property Name="codeStyle" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="nameStyle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="products" Relationship="Self.FK__product__codeSty__4F7CD00D" FromRole="style" ToRole="product" />
+        </EntityType>
+        <EntityType Name="tlb_user">
+          <Key>
+            <PropertyRef Name="idUser" />
+          </Key>
+          <Property Name="idUser" Type="Int32" Nullable="false" />
+          <Property Name="userName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="userPass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="userRole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__bill__codeCus__52593CB8">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="bill" Type="Self.bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="codeCus" />
+            </Principal>
+            <Dependent Role="bill">
+              <PropertyRef Name="codeCus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detailBil__idBil__5535A963">
+          <End Role="bill" Type="Self.bill" Multiplicity="1" />
+          <End Role="detailBill" Type="Self.detailBill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bill">
+              <PropertyRef Name="idBill" />
+            </Principal>
+            <Dependent Role="detailBill">
+              <PropertyRef Name="idBill" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detailBil__codeP__5629CD9C">
+          <End Role="product" Type="Self.product" Multiplicity="1" />
+          <End Role="detailBill" Type="Self.detailBill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="codePro" />
+            </Principal>
+            <Dependent Role="detailBill">
+              <PropertyRef Name="codePro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__product__codeSty__4F7CD00D">
+          <End Role="style" Type="Self.style" Multiplicity="1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="style">
+              <PropertyRef Name="codeStyle" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="codeStyle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TheBakeryShopEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="bills" EntityType="Self.bill" />
+          <EntitySet Name="customers" EntityType="Self.customer" />
+          <EntitySet Name="detailBills" EntityType="Self.detailBill" />
+          <EntitySet Name="products" EntityType="Self.product" />
+          <EntitySet Name="styles" EntityType="Self.style" />
+          <EntitySet Name="tlb_user" EntityType="Self.tlb_user" />
+          <AssociationSet Name="FK__bill__codeCus__52593CB8" Association="Self.FK__bill__codeCus__52593CB8">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="bill" EntitySet="bills" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detailBil__idBil__5535A963" Association="Self.FK__detailBil__idBil__5535A963">
+            <End Role="bill" EntitySet="bills" />
+            <End Role="detailBill" EntitySet="detailBills" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detailBil__codeP__5629CD9C" Association="Self.FK__detailBil__codeP__5629CD9C">
+            <End Role="product" EntitySet="products" />
+            <End Role="detailBill" EntitySet="detailBills" />
+          </AssociationSet>
+          <AssociationSet Name="FK__product__codeSty__4F7CD00D" Association="Self.FK__product__codeSty__4F7CD00D">
+            <End Role="style" EntitySet="styles" />
+            <End Role="product" EntitySet="products" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TheBakeryShopModelStoreContainer" CdmEntityContainer="TheBakeryShopEntities">
+          <EntitySetMapping Name="bills">
+            <EntityTypeMapping TypeName="TheBakeryShopModel.bill">
+              <MappingFragment StoreEntitySet="bill">
+                <ScalarProperty Name="idBill" ColumnName="idBill" />
+                <ScalarProperty Name="billDate" ColumnName="billDate" />
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="totalBuy" ColumnName="totalBuy" />
+                <ScalarProperty Name="codeCus" ColumnName="codeCus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="TheBakeryShopModel.customer">
+              <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="codeCus" ColumnName="codeCus" />
+                <ScalarProperty Name="nameCus" ColumnName="nameCus" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detailBills">
+            <EntityTypeMapping TypeName="TheBakeryShopModel.detailBill">
+              <MappingFragment StoreEntitySet="detailBill">
+                <ScalarProperty Name="idBill" ColumnName="idBill" />
+                <ScalarProperty Name="codePro" ColumnName="codePro" />
+                <ScalarProperty Name="quantityPro" ColumnName="quantityPro" />
+                <ScalarProperty Name="totalMoney" ColumnName="totalMoney" />
+                <ScalarProperty Name="priceProBuying" ColumnName="priceProBuying" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="TheBakeryShopModel.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="codePro" ColumnName="codePro" />
+                <ScalarProperty Name="namePro" ColumnName="namePro" />
+                <ScalarProperty Name="descriptionPro" ColumnName="descriptionPro" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="codeStyle" ColumnName="codeStyle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="styles">
+            <EntityTypeMapping TypeName="TheBakeryShopModel.style">
+              <MappingFragment StoreEntitySet="style">
+                <ScalarProperty Name="codeStyle" ColumnName="codeStyle" />
+                <ScalarProperty Name="nameStyle" ColumnName="nameStyle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tlb_user">
+            <EntityTypeMapping TypeName="TheBakeryShopModel.tlb_user">
+              <MappingFragment StoreEntitySet="tlb_user">
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="userPass" ColumnName="userPass" />
+                <ScalarProperty Name="userRole" ColumnName="userRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
