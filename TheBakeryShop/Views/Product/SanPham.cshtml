@@ -1,7 +1,7 @@
-﻿@*@model IEnumerable<TheBakeryShop.Models.tbProduct>*@
-@using TheBakeryShop.Models;
+﻿@model IEnumerable<TheBakeryShop.Models.tbProduct>
+@*@using TheBakeryShop.Models;
 @using PagedList.Mvc;
-@model PagedList.PagedList<tbProduct>
+@model PagedList.PagedList<tbProduct>*@
 
 @{
     ViewBag.Title = "Sản phẩm";
@@ -27,9 +27,12 @@
                 <div class="all-product">
                     <div class="title-pd"><h5>Danh mục sản phẩm</h5></div>
                     <div class="all-pro">
-                        <ul>
+
+                        @{Html.RenderAction("Style", "Product"); }
+
+                        @*<ul>
                             <li>
-                                <a href="#">Bánh ngọt <i class="fi fi-br-angle-down" style="font-size: 17px;"></i></a>
+                                <a href="#">Bánh ngọt</a>
                                 <ul>
                                     <li><a href="#">Bánh bông lan</a></li>
                                     <li><a href="#">Bánh su kem</a></li>
@@ -42,7 +45,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">Bánh sinh nhật <i class="fi fi-br-angle-down" style="font-size: 17px;"></i></a>
+                                <a href="#">Bánh sinh nhật</a>
                                 <ul>
                                     <li><a href="#">Bánh sự kiện</a></li>
                                     <li><a href="#">Bánh đặt trước</a></li>
@@ -51,7 +54,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">Bánh theo mùa <i class="fi fi-br-angle-down" style="font-size: 17px;"></i></a>
+                                <a href="#">Bánh theo mùa</a>
                                 <ul>
                                     <li><a href="#">Bánh quy tết</a></li>
                                     <li><a href="#">Bánh trung thu</a></li>
@@ -60,14 +63,14 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">Bánh mì <i class="fi fi-br-angle-down" style="font-size: 17px;"></i></a>
+                                <a href="#">Bánh mì</a>
                                 <ul>
                                     <li><a href="#">Bánh mì gối</a></li>
                                     <li><a href="#">Bánh mì mặn</a></li>
                                     <li><a href="#">Bánh mì ngọt</a></li>
                                 </ul>
                             </li>
-                        </ul>
+                        </ul>*@
                     </div>
                 </div>
 
@@ -114,43 +117,45 @@
 
         <div class="col-lg-9">
 
-            <div class="row products-list">
+            @{Html.RenderAction("DMSanPham", "Product"); }
 
-                @foreach (var pro in Model)
-                {
-                    <div class="col-lg-3">
+            @*<div class="row products-list">
 
-                        <div class="product-top">
+            @foreach (var pro in Model)
+            {
+                <div class="col-lg-3">
 
-                            <div class="pd-img">
-                                <div class="pd-img-child">
-                                    <img src="@Url.Content(pro.imagePro)" alt="list-ck" class="img" style="width:100%" />
-                                </div>
-                            </div>
+                    <div class="product-top">
 
-                            <div class="overlay">
-                                <button type="button" class="btn btn-secondary" title="quick shop">
-                                    <a href="@Url.Action("ChiTietSanPham", "Product")" style="text-decoration:none;color:white;">
-                                        <i class="fi fi-br-search search-icon"></i>
-                                    </a>
-                                </button>
-                                <button type="button" class="btn btn-secondary" title="quick shop">
-                                    <a href="@Url.Action("GioHang", "Product")" style="text-decoration:none;color:white;">
-                                        <i class="fi fi-br-shopping-cart cart-icon"></i>
-                                    </a>
-                                </button>
+                        <div class="pd-img">
+                            <div class="pd-img-child">
+                                <img src="@Url.Content(pro.imagePro)" alt="list-ck" class="img" style="width:100%" />
                             </div>
                         </div>
-                        <div class="product-bottom text-center">
-                            <h5>@Html.DisplayFor(Model => pro.namePro)</h5>
-                            <h6>@Html.DisplayFor(Model => pro.pricePro)đ</h6>
+
+                        <div class="overlay">
+                            <button type="button" class="btn btn-secondary" title="quick shop">
+                                <a href="@Url.Action("ChiTietSanPham", "Product")" style="text-decoration:none;color:white;">
+                                    <i class="fi fi-br-search search-icon"></i>
+                                </a>
+                            </button>
+                            <button type="button" class="btn btn-secondary" title="quick shop">
+                                <a href="@Url.Action("GioHang", "Product")" style="text-decoration:none;color:white;">
+                                    <i class="fi fi-br-shopping-cart cart-icon"></i>
+                                </a>
+                            </button>
                         </div>
                     </div>
-                }
+                    <div class="product-bottom text-center">
+                        <h5>@Html.DisplayFor(Model => pro.namePro)</h5>
+                        <h6>@Html.DisplayFor(Model => pro.pricePro)đ</h6>
+                    </div>
+                </div>
+            }
 
-            </div>
+        </div>
 
-                @Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))
+            @Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))*@
         </div>
 
     </div>
