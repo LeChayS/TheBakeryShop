@@ -164,6 +164,14 @@ ul {
 .header .menu > ul > li:hover > a{
     color: peru;
 }
+.header .menu > ul > li:hover > i {
+    color: peru;
+}
+
+.header .menu > ul > li > i {
+    color: white;
+    transition: all 0.3s ease;
+}
 .mobile-menu-head,
 .mobile-menu-trigger,
 .header .menu-log {
@@ -172,6 +180,20 @@ ul {
 
 /*responsive*/
 @media(max-width: 991px) {
+    .header .menu > ul > li > a i {
+        color: black;
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        transform: rotate(-90deg);
+        right: 0;
+        top: 100px;
+        font-weight: bold;
+        /* background-color: red; */
+        text-align: center;
+        line-height: 50px;
+        /* border: 1px solid rgba(0,0,0,0.3); */
+    }
     .header .item-center {
         order: 3;
         flex: 0 0 100%;
@@ -263,21 +285,11 @@ ul {
     .header .menu > ul > li > a {
         line-height: 50px;
         height: 50px;
-        padding: 0 50px 0 15px;
+        /*padding: 0 50px 0 15px;*/
         display: block;
         /* border-bottom: 1px solid rgba(0,0,0,0.1); */
     }
 
-    .header .menu > ul > li > a i {
-        position: absolute;
-        height: 50px;
-        width: 50px;
-        top: 0;
-        right: 0;
-        text-align: center;
-        line-height: 50px;
-        transform: rotate(-90deg);
-    }
 
     .header .menu .mobile-menu-head {
         display: flex;
