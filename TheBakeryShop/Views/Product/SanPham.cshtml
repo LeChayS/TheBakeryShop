@@ -117,9 +117,9 @@
 
         <div class="col-lg-9">
 
-            @{Html.RenderAction("DMSanPham", "Product"); }
+            @*@{Html.RenderAction("DMSanPham", "Product"); }*@
 
-            @*<div class="row products-list">
+            <div class="row products-list">
 
             @foreach (var pro in Model)
             {
@@ -155,7 +155,7 @@
 
         </div>
 
-            @Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))*@
+            @*@Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))*@
         </div>
 
     </div>
