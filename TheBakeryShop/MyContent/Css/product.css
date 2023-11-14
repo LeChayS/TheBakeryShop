@@ -55,9 +55,10 @@ ul{
     border-radius: 8px;
     max-height: 350px;
 }
-.row .product-select .all-product .all-pro {
+.row .product-select .all-product .all-pro{
     overflow-x: auto;
     max-height: 300px;
+    padding: 15px;
 }
 .row .product-select .all-product ul{
     padding-left:10px ; 
@@ -171,3 +172,44 @@ ul{
     /*margin-left: 5%;*/
     transform: translateY(-55%);
 }
+
+/*pagination*/
+.pagination-container ul {
+    justify-content: center;
+    align-items: center;
+}
+
+    .pagination-container ul li {
+        display: inline-block;
+        text-align: center;
+        width: 45px;
+        height: 45px;
+        background-color: white;
+        border: 2px solid peru;
+        margin-right: 6px;
+        border-radius: 10px;
+    }
+
+        .pagination-container ul li a {
+            text-decoration: none;
+            color: peru;
+            font-size: 25px;
+            /* background-color: black; */
+            padding: 5px 16px 10px 16px;
+            border-radius: 10px;
+        }
+
+        .pagination-container ul li.active,
+        .pagination-container ul li.active a {
+            background-color: peru;
+            color: white;
+        }
+
+        .pagination-container ul li:hover {
+            background-color: peru;
+        }
+
+            .pagination-container ul li:hover a {
+                background-color: peru;
+                color: white;
+            }
