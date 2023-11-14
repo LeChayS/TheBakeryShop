@@ -1,22 +1,26 @@
 ﻿@model IEnumerable<TheBakeryShop.Models.tbStyle>
 <style>
-    
-    .dm-link{
-        text-decoration:none;
-        font-size:20px;
-        color:peru;
-    }
-    .dm-link:hover {
-        opacity:0.8;
-    }
-</style>
 
-@foreach(var style in Model)
-            {
-                @*<p>
-                    @Html.DisplayFor(model => style.nameStyle)
-                </p>*@
-                <p>
-                    @Html.ActionLink(style.nameStyle, "SanPham", "Product", new {style = style.codeStyle},new {@class="dm-link"})
-                </p>
-            }
+    .dm-link {
+        text-decoration: none;
+        font-size: 20px;
+        color: peru;
+    }
+
+        .dm-link:hover {
+            opacity: 0.8;
+        }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Merienda&family=Playpen+Sans&display=swap" rel="stylesheet">
+
+@foreach (var style in Model)
+{
+    @*<p>
+            @Html.DisplayFor(model => style.nameStyle)
+        </p>*@
+    <p>
+        @Html.ActionLink(style.nameStyle, "SanPham", "Product", new { style = style.codeStyle }, new { @class = "dm-link" })
+    </p>
+}

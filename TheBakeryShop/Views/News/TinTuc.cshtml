@@ -9,6 +9,10 @@
 <script src="~/Scripts/bootstrap.min.js"></script>
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Merienda&family=Playpen+Sans&display=swap" rel="stylesheet">
+
 <div class="bg-news">
     <h1>Tin tức</h1>
 </div>
@@ -28,7 +32,7 @@
                     </div>
                     <div class="col-lg-7">
                         <div class="title-date">
-                            <a href="#"><h4>@Html.ActionLink("Bánh sinh nhật khủng long", "ChiTietTinTuc", "News")</h4></a>
+                            <a href="@Url.Action("ChiTietTinTuc", "News")"><h4>Bánh sinh nhật khủng long</h4></a>
                             <div class="time-post">
                                 17/08/2023
                             </div>

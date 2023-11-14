@@ -15,13 +15,52 @@ namespace TheBakeryShop.Controllers
         {
             return View();
         }
+
         public ActionResult DangNhap()
         {
             return View();
         }
+        public ActionResult AuthenDangNhap(tbUser user)
+        {
+            try
+            {
+                var check_Name = db.tbUsers.Where(s => s.userName == user.userName).FirstOrDefault();
+                var check_Pass = db.tbUsers.Where(s => s.userPass == user.userPass).FirstOrDefault();
+                if (check_Name == null || check_Pass == null)
+                {
+                    if (check_Name == null)
+                        ViewBag.ErrorName = "Sai tên đăng nhập";
+                    if (check_Pass == null)
+                        ViewBag.ErrorPass = "Sai mật khẩu";
+                    return View("DangNhap");
+                }
+                else
+                {
+                    return RedirectToAction("TrangChu","Home");
+                }
+            }   
+            catch 
+            {
+                return View("DangNhap");
+            }
+        }
+
         public ActionResult DangKy()
         {
             return View();
+        }
+        public ActionResult AuthenDangKy(tbUser user)
+        {
+            try
+            {
+                db.tbUsers.Add(user);
+                db.SaveChanges();
+                return RedirectToAction("DangNhap");
+            }
+            catch
+            {
+                return View("DangKy");
+            }
         }
     }
 }

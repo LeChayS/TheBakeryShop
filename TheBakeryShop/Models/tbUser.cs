@@ -24,21 +24,26 @@ namespace TheBakeryShop.Models
         }
 
         [DisplayName("ID User")]
-        [Required(ErrorMessage ="Không được để trống")]
+        [Required(ErrorMessage = "not empty")]
         public int idUser { get; set; }
 
         [DisplayName("Tên người dùng")]
-        [Required(ErrorMessage = "Không được để trống")]
+        [Required(ErrorMessage = "Không được để trống tên đăng nhập")]
         public string userName { get; set; }
 
         [DisplayName("Mật khẩu")]
-        [Required(ErrorMessage = "Không được để trống")]
+        [Required(ErrorMessage = "Không được để trống mật khẩu")]
         public string userPass { get; set; }
 
         [DisplayName("Chức vụ")]
-        [Required(ErrorMessage = "Không được để trống")]
+        [Required(ErrorMessage = "not empty")]
         public string userRole { get; set; }
 
+        [NotMapped]
+        [DisplayName("Nhập lại mật khẩu")]
+        [Required(ErrorMessage = "Không được để trống")]
+        [Compare("userPass")]
+        public string RePass { get;set; }
 
         public string codeCus { get; set; }
     

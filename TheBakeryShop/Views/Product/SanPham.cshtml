@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<TheBakeryShop.Models.tbProduct>
 @*@using TheBakeryShop.Models;
-@using PagedList.Mvc;
-@model PagedList.PagedList<tbProduct>*@
+    @using PagedList.Mvc;
+    @model PagedList.PagedList<tbProduct>*@
 
 @{
     ViewBag.Title = "Sản phẩm";
@@ -13,6 +13,10 @@
 
 <script src="~/Scripts/bootstrap.min.js"></script>
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Merienda&family=Playpen+Sans&display=swap" rel="stylesheet">
 
 <div class="bg-news">
     <h1>Sản phẩm</h1>
@@ -31,46 +35,46 @@
                         @{Html.RenderAction("Style", "Product"); }
 
                         @*<ul>
-                            <li>
-                                <a href="#">Bánh ngọt</a>
-                                <ul>
-                                    <li><a href="#">Bánh bông lan</a></li>
-                                    <li><a href="#">Bánh su kem</a></li>
-                                    <li><a href="#">Bánh Mousse</a></li>
-                                    <li><a href="#">Bánh Tiramisu</a></li>
-                                    <li><a href="#">Bánh Panna Cotta</a></li>
-                                    <li><a href="#">Pudding</a></li>
-                                    <li><a href="#">Bánh Donut</a></li>
-                                    <li><a href="#">Bánh Tart trứng</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Bánh sinh nhật</a>
-                                <ul>
-                                    <li><a href="#">Bánh sự kiện</a></li>
-                                    <li><a href="#">Bánh đặt trước</a></li>
-                                    <li><a href="#">Bánh có sẵn</a></li>
-                                    <li><a href="#">Dành cho trẻ em</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Bánh theo mùa</a>
-                                <ul>
-                                    <li><a href="#">Bánh quy tết</a></li>
-                                    <li><a href="#">Bánh trung thu</a></li>
-                                    <li><a href="#">Bánh quy Noel</a></li>
-                                    <li><a href="#">Bánh Halloween</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Bánh mì</a>
-                                <ul>
-                                    <li><a href="#">Bánh mì gối</a></li>
-                                    <li><a href="#">Bánh mì mặn</a></li>
-                                    <li><a href="#">Bánh mì ngọt</a></li>
-                                </ul>
-                            </li>
-                        </ul>*@
+                                <li>
+                                    <a href="#">Bánh ngọt</a>
+                                    <ul>
+                                        <li><a href="#">Bánh bông lan</a></li>
+                                        <li><a href="#">Bánh su kem</a></li>
+                                        <li><a href="#">Bánh Mousse</a></li>
+                                        <li><a href="#">Bánh Tiramisu</a></li>
+                                        <li><a href="#">Bánh Panna Cotta</a></li>
+                                        <li><a href="#">Pudding</a></li>
+                                        <li><a href="#">Bánh Donut</a></li>
+                                        <li><a href="#">Bánh Tart trứng</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Bánh sinh nhật</a>
+                                    <ul>
+                                        <li><a href="#">Bánh sự kiện</a></li>
+                                        <li><a href="#">Bánh đặt trước</a></li>
+                                        <li><a href="#">Bánh có sẵn</a></li>
+                                        <li><a href="#">Dành cho trẻ em</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Bánh theo mùa</a>
+                                    <ul>
+                                        <li><a href="#">Bánh quy tết</a></li>
+                                        <li><a href="#">Bánh trung thu</a></li>
+                                        <li><a href="#">Bánh quy Noel</a></li>
+                                        <li><a href="#">Bánh Halloween</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Bánh mì</a>
+                                    <ul>
+                                        <li><a href="#">Bánh mì gối</a></li>
+                                        <li><a href="#">Bánh mì mặn</a></li>
+                                        <li><a href="#">Bánh mì ngọt</a></li>
+                                    </ul>
+                                </li>
+                            </ul>*@
                     </div>
                 </div>
 
@@ -121,39 +125,39 @@
 
             <div class="row products-list">
 
-            @foreach (var pro in Model)
-            {
-                <div class="col-lg-3">
+                @foreach (var pro in Model)
+                {
+                    <div class="col-lg-3">
 
-                    <div class="product-top">
+                        <div class="product-top">
 
-                        <div class="pd-img">
-                            <div class="pd-img-child">
-                                <img src="@Url.Content(pro.imagePro)" alt="list-ck" class="img" style="width:100%" />
+                            <div class="pd-img">
+                                <div class="pd-img-child">
+                                    <img src="@Url.Content(pro.imagePro)" alt="list-ck" class="img" style="width:100%" />
+                                </div>
+                            </div>
+
+                            <div class="overlay">
+                                <button type="button" class="btn btn-secondary" title="quick shop">
+                                    <a href="@Url.Action("ChiTietSanPham", "Product")" style="text-decoration:none;color:white;">
+                                        <i class="fi fi-br-search search-icon"></i>
+                                    </a>
+                                </button>
+                                <button type="button" class="btn btn-secondary" title="quick shop">
+                                    <a href="@Url.Action("GioHang", "Product")" style="text-decoration:none;color:white;">
+                                        <i class="fi fi-br-shopping-cart cart-icon"></i>
+                                    </a>
+                                </button>
                             </div>
                         </div>
-
-                        <div class="overlay">
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <a href="@Url.Action("ChiTietSanPham", "Product")" style="text-decoration:none;color:white;">
-                                    <i class="fi fi-br-search search-icon"></i>
-                                </a>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="quick shop">
-                                <a href="@Url.Action("GioHang", "Product")" style="text-decoration:none;color:white;">
-                                    <i class="fi fi-br-shopping-cart cart-icon"></i>
-                                </a>
-                            </button>
+                        <div class="product-bottom text-center">
+                            <h5>@Html.DisplayFor(Model => pro.namePro)</h5>
+                            <h6>@Html.DisplayFor(Model => pro.pricePro)đ</h6>
                         </div>
                     </div>
-                    <div class="product-bottom text-center">
-                        <h5>@Html.DisplayFor(Model => pro.namePro)</h5>
-                        <h6>@Html.DisplayFor(Model => pro.pricePro)đ</h6>
-                    </div>
-                </div>
-            }
+                }
 
-        </div>
+            </div>
 
             @*@Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))*@
         </div>

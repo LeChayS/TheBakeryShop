@@ -8,6 +8,10 @@
 <link href="~/MyContent/Css/bg-news.css" rel="stylesheet" />
 <link href="~/MyContent/Css/contact.css" rel="stylesheet" />
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Merienda&family=Playpen+Sans&display=swap" rel="stylesheet">
+
 <div class="bg-news">
     <h1>Liên hệ</h1>
 </div>
@@ -20,7 +24,7 @@
                 <div class="group-address">
                     <ul>
                         <li>
-                            <div class="icon"><i class="fi fi-br-map-marker"></i></div>
+                            <div class="icon"></div>
                             <div class="info">
                                 <b>Địa chỉ:</b>
                                 <span>828 Sư Vạn Hạnh, Phường 13, Quận 10, TP. HCM</span>
@@ -56,14 +60,17 @@
                     <h2 class="name-store">Mọi thắc mắc xin vui lòng liên hệ với chúng tôi</h2>
 
                     <div id="pagelogin">
-                        <form method="post" action="/postcontact" id="contact" accept-charset="UTF-8"><input name="FormType" type="hidden" value="contact"><input name="utf8" type="hidden" value="true"><input type="hidden" id="Token-2bca6bea1c814162b62f61aeb906b7db" name="Token" value="03AFcWeA45e-8uqP2Cyj3pEuXFRoF70qVsYSL_IuzhXW3uUh7vVmD8E8kH0d7mFo2_cEu3bjQeBX_Pew0oUe_3PiJURcWQa4UcZBwDZELmloAYTL1oHeCP5mCO1LZcVHGza08LhKTZZQ6Sn4N-uhFGFwMqb52iBqBdsCakZGJIVpi4ZPcOQWmcKO8S8rorVQjLQFC0c5e9Ffdp44wTn3qt7RBpzW7PhcgDsEGrRR5pus66N7WFHJAYAdVI-d7xb4dhs5y3Kuwf6dCOigy4jHwxhBlB7jtrjw_EQIaX7UQNBGUOcpMH2DSXLu5wspvyMsvYuuut7GUl2fuPmVQ_5jgSNKc0lvNQ3ht4xUeu0BBvdl2Kqrc_NQo0lwFzOjeKBxoDfq_QHCo1EEn_Oj-QzJTTLwbJQdAscEQP1lytlv5b5CPul01_IJDV453fwDhreGG6FanhO4ORSFxci1pIqMQn7tvqRq5P8vF1eMFz1pW0JsXjGUmnMvaJI5qlyiDi3lWBuxRut_PQovyTlkhlaJM9_c67DmCbDx4jvFitdMHrNIIePa3O61q1ZsbJNj6mKO1dQOjKnvnN_PfQRxWQpj3C7DEv0NH7fYJzIrzCDR8jKRLwjwC41VfLJDA"><script src="https://www.google.com/recaptcha/api.js?render=6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK"></script><script>grecaptcha.ready(function() {grecaptcha.execute("6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK", {action: "contact"}).then(function(token) {document.getElementById("Token-2bca6bea1c814162b62f61aeb906b7db").value = token});});</script>
-                        <div class="group_contact">
-                            <input style="margin-top: 10px;" placeholder="Họ và tên" type="text" class="form-control  form-control-lg" required="" name="contact[Name]">
-                            @*<input style="margin-top: 10px;" placeholder="Email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required="" id="email1" class="form-control form-control-lg" name="contact[email]">*@
-                            <input style="margin-top: 10px;" type="tel" placeholder="Điện thoại" name="contact[phone]" class="form-control form-control-lg" required="">
-                            <textarea style="margin-top: 10px;" placeholder="Nội dung" name="contact[body]" id="comment" class="form-control content-area form-control-lg" rows="5" required=""></textarea>
-                            <button type="submit" class="btn" style="margin-top: 10px; background-color: peru;color: white;">Gửi thông tin</button>
-                        </div>
+                        <form method="post" action="/postcontact" id="contact" accept-charset="UTF-8">
+                            <input name="FormType" type="hidden" value="contact"><input name="utf8" type="hidden" value="true"><input type="hidden" id="Token-2bca6bea1c814162b62f61aeb906b7db" name="Token" value="03AFcWeA45e-8uqP2Cyj3pEuXFRoF70qVsYSL_IuzhXW3uUh7vVmD8E8kH0d7mFo2_cEu3bjQeBX_Pew0oUe_3PiJURcWQa4UcZBwDZELmloAYTL1oHeCP5mCO1LZcVHGza08LhKTZZQ6Sn4N-uhFGFwMqb52iBqBdsCakZGJIVpi4ZPcOQWmcKO8S8rorVQjLQFC0c5e9Ffdp44wTn3qt7RBpzW7PhcgDsEGrRR5pus66N7WFHJAYAdVI-d7xb4dhs5y3Kuwf6dCOigy4jHwxhBlB7jtrjw_EQIaX7UQNBGUOcpMH2DSXLu5wspvyMsvYuuut7GUl2fuPmVQ_5jgSNKc0lvNQ3ht4xUeu0BBvdl2Kqrc_NQo0lwFzOjeKBxoDfq_QHCo1EEn_Oj-QzJTTLwbJQdAscEQP1lytlv5b5CPul01_IJDV453fwDhreGG6FanhO4ORSFxci1pIqMQn7tvqRq5P8vF1eMFz1pW0JsXjGUmnMvaJI5qlyiDi3lWBuxRut_PQovyTlkhlaJM9_c67DmCbDx4jvFitdMHrNIIePa3O61q1ZsbJNj6mKO1dQOjKnvnN_PfQRxWQpj3C7DEv0NH7fYJzIrzCDR8jKRLwjwC41VfLJDA">
+                            <script src="https://www.google.com/recaptcha/api.js?render=6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK"></script>
+                            <script>grecaptcha.ready(function () { grecaptcha.execute("6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK", { action: "contact" }).then(function (token) { document.getElementById("Token-2bca6bea1c814162b62f61aeb906b7db").value = token }); });</script>
+                            <div class="group_contact">
+                                <input style="margin-top: 10px;" placeholder="Họ và tên" type="text" class="form-control  form-control-lg" required="" name="contact[Name]">
+                                @*<input style="margin-top: 10px;" placeholder="Email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required="" id="email1" class="form-control form-control-lg" name="contact[email]">*@
+                                <input style="margin-top: 10px;" type="tel" placeholder="Điện thoại" name="contact[phone]" class="form-control form-control-lg" required="">
+                                <textarea style="margin-top: 10px;" placeholder="Nội dung" name="contact[body]" id="comment" class="form-control content-area form-control-lg" rows="5" required=""></textarea>
+                                <button type="submit" class="btn" style="margin-top: 10px; background-color: peru;color: white;">Gửi thông tin</button>
+                            </div>
                         </form>
                     </div>
                 </div>

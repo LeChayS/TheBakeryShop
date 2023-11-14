@@ -23,6 +23,9 @@
     background-size: cover;
     position: absolute;
     background-image: linear-gradient(to right,rgba(0,0,0,0.5),rgba(0,0,0,0.8)),url(../Image/cupcake-bg.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -61,10 +64,25 @@
             text-align: center;
         }
 
-        .bg .wraper a {
+        /*.bg .wraper a {
+            display:block;
             text-decoration: none;
             color: peru;
             font-weight: bold;
+            margin-top:16px;
+        }*/
+        .bg .wraper .forgot{
+            display: block;
+            text-decoration: none;
+            color: peru;
+            font-weight: bold;
+            margin-top: 16px;
+        }
+        .bg .wraper .up{
+            text-decoration: none;
+            color: peru;
+            font-weight: bold;
+            margin-top: 16px;
         }
 
             .bg .wraper a:hover {
@@ -84,7 +102,9 @@
         .bg .wraper .signin {
             padding: 0 50px 0 65px;
         }
-
+        .bg .wraper{
+            
+        }
         .bg .wraper form input {
             display: block;
             height: 50px;
@@ -107,4 +127,16 @@
             .bg .wraper form .btn-sub:hover {
                 background-color: white;
                 color: peru;
+            }
+        
+            .bg .wraper form span{
+
+                display:block;
+                color:red;
+                font-size:15px;
+            }
+            .bg .wraper form p {
+                display: block;
+                color: red;
+                font-size: 15px;
             }

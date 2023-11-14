@@ -29,64 +29,36 @@
 </head>
 <body>
     <div class="bg">
-        @*<div class="wrapper">
-
-            <div class="title-text">
-                <div class="title login">
-                    Đăng nhập
-                </div>
-            </div>
-
-            @using (Html.BeginForm())
-            {
-                <div class="form-container">
-                    <div class="form-inner">
-                        <form action="#" class="login">
-                            <div class="field">
-                                @Html.TextBoxFor( m => m.userName, new { placeholder = "Tên đăng nhập" })
-                                @Html.ValidationMessageFor( m => m.userName)
-                                <input type="text" placeholder="Tên đăng nhập hoặc email" required>
-                            </div>
-                            <div class="field">
-                                @Html.TextBoxFor(m => m.userPass, new { placeholder = "Mật khẩu" })
-                                @Html.ValidationMessageFor(m => m.userPass)
-                                <input type="password" placeholder="Mật khẩu" required>
-                            </div>
-                            <div class="pass-link">
-                                <a href="#">Quên mật khẩu?</a>
-                            </div>
-                            <div class="field btn">
-                                <div class="btn-layer"></div>
-                                <input type="submit" value="Đăng nhập">
-                            </div>
-                            <div class="signup-link">
-                                Không phải là thành viên? <a href="Register.html">Đăng ký!</a>
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
-
-            }
-        </div>*@
+     
 
         <div class="wraper">
             <h3>Đăng nhập</h3>
-            @using (Html.BeginForm())
+            @using (Html.BeginForm("AuthenDangNhap","User",FormMethod.Post))
             {
                 <form action="">
+                    @*@Html.DisplayNameFor(m => m.userName)*@
                     @Html.TextBoxFor(m => m.userName, new { placeholder = "Tên đăng nhập" })
                     @Html.ValidationMessageFor(m => m.userName)
-                    @Html.TextBoxFor(m => m.userPass, new { placeholder = "Mật khẩu" })
+                    @if (ViewBag.ErrorName != null)
+                    {
+                        <p>@ViewBag.ErrorName</p>
+                    }
+
+                    @Html.PasswordFor(m => m.userPass, new { placeholder = "Mật khẩu" })
                     @Html.ValidationMessageFor(m => m.userPass)
-                    <input type="text" placeholder="Tên đăng nhập">
-                    <input type="password" placeholder="Mật khẩu">
-                    <a href="#">Quên mật khẩu?</a>
+                    @if (ViewBag.ErrorPass != null)
+                    {
+                        <p>@ViewBag.ErrorPass</p>
+                    }
+
+                    @*<input type="text" placeholder="Tên đăng nhập">
+        <input type="password" placeholder="Mật khẩu">*@
+                    <a href="#" class="forgot">Quên mật khẩu?</a>
                     <input type="submit" value="Đăng nhập" class="btn-sub">
                 </form>
                 <div class="signup">
                     <span>Không phải là thành viên?</span>
-                    <a href="#">Đăng ký</a>
+                    <a href="@Url.Action("DangKy","User")" class="up">Đăng ký</a>
                 </div>
 
             }
@@ -97,4 +69,3 @@
     
 </body>
 </html>
-
