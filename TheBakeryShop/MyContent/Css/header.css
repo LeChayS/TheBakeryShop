@@ -13,6 +13,7 @@ body {
 :before, :after {
     box-sizing: border-box;
 }
+
 .container {
     max-width: 1400px;
     margin: auto;
@@ -43,7 +44,7 @@ ul {
     padding: 15px;
     float:right;
     /*sticky nav*/
-    background-color: transparent;
+    background-color: /*transparent*/black;
     position: fixed;
     transition: 0.5s;
 }
@@ -491,6 +492,9 @@ ul {
     height: 100%;
     padding: 10px 20px;
     border-radius: 5px;
+}
+::placeholder {
+    color: gray;
 }
 
 .search-wrap .search-box .btn-search {

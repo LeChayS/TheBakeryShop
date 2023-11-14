@@ -49,13 +49,13 @@ namespace TheBakeryShop.Controllers
         {
             return View();
         }
-        public ActionResult AuthenDangKy(tbUser user)
+        public ActionResult AuthenDangKy(tbUser _user)
         {
             try
             {
-                db.tbUsers.Add(user);
+                db.tbUsers.Add(_user);
                 db.SaveChanges();
-                return RedirectToAction("DangNhap");
+                return RedirectToAction("TrangChu", "Home");
             }
             catch
             {

@@ -18,6 +18,20 @@
     <link href="~/MyContent/Css/header.css" rel="stylesheet" />
     <script src="~/MyContent/Js/header.js" defer></script>
     <link href="~/MyContent/Css/footer.css" rel="stylesheet" />
+    <style>
+        .popup .text .log a{
+            text-decoration:none;
+            font-size:20px;
+            color:white;
+            padding:20px 100px 20px 100px;
+        }
+        .header .menu-log a {
+            text-decoration: none;
+            font-size: 17px;
+            color: white;
+            padding: 20px 100px 20px 100px;
+        }
+    </style>
 
     <!--icon-->
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
@@ -127,7 +141,6 @@
                                         <button type="button" class="signin" >@Html.ActionLink("Đăng nhập", "DangNhap", "User")</button>
                                         <button type="button" class="register" >@Html.ActionLink("Đăng ký", "DangKy", "User")</button>
                                     </div>
-
                                 </div>
                             </li>
                         </ul>
@@ -170,7 +183,7 @@
             </div>
         </div>
     </div>
-
+    
     <div class="cart-sidebar">
         <span class="close-cart"><i class="fi fi-br-cross"></i></span>
         <div class="cart-title">

@@ -21,7 +21,7 @@ CREATE TABLE tbCustomer
 
 CREATE TABLE tbUser
 (
-  idUser INT NOT NULL,
+  idUser INT IDENTITY(1,1) NOT NULL,
   --codeCus INT NOT NULL,
   userName NVARCHAR(100) NULL,
   userPass NVARCHAR(max) NULL,
@@ -100,16 +100,16 @@ INSERT into tbCustomer VALUES('KH010',N'Nguyễn An',N'TP HCM',0913455564,'ngan@
 select*from tbCustomer;
 
 --tbUser
-INSERT into tbUser VALUES(001,'ngthihue','ngthihue123',null,'KH001');
-INSERT into tbUser VALUES(002,'trthilan','trthilan123',null,'KH002');
-INSERT into tbUser VALUES(003,'dkv','dkv123',null,'KH003');
-INSERT into tbUser VALUES(004,'ngthicuc','ngthicuc123',null,'KH004');
-INSERT into tbUser VALUES(005,'nghoa','nghoa123',null,'KH005');
-INSERT into tbUser VALUES(006,'lenhu','lenhu123',null,'KH006');
-INSERT into tbUser VALUES(007,'nghung','nghung123',null,'KH007');
-INSERT into tbUser VALUES(008,'maihuong','maihuong123',null,'KH008');
-INSERT into tbUser VALUES(009,'ngvannam','ngvannam123',null,'KH009');
-INSERT into tbUser VALUES(010,'ngan','ngan123',null,'KH010');
+INSERT into tbUser VALUES('ngthihue','ngthihue123',null,'KH001');
+INSERT into tbUser VALUES('trthilan','trthilan123',null,'KH002');
+INSERT into tbUser VALUES('dkv','dkv123',null,'KH003');
+INSERT into tbUser VALUES('ngthicuc','ngthicuc123',null,'KH004');
+INSERT into tbUser VALUES('nghoa','nghoa123',null,'KH005');
+INSERT into tbUser VALUES('lenhu','lenhu123',null,'KH006');
+INSERT into tbUser VALUES('nghung','nghung123',null,'KH007');
+INSERT into tbUser VALUES('maihuong','maihuong123',null,'KH008');
+INSERT into tbUser VALUES('ngvannam','ngvannam123',null,'KH009');
+INSERT into tbUser VALUES('ngan','ngan123',null,'KH010');
 select*from tbUser;
 
 

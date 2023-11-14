@@ -21,7 +21,7 @@
         text-align: center;
     }
 
-    .footer a {
+    .footer a{
         background-color: peru;
         width: 100%;
         padding: 0;
@@ -58,6 +58,7 @@
     margin-bottom: 20px;
     font-size: 20px;
     transition: all 0.3s ease;
+    text-decoration:none;
 }
 
     .footer .dm-menu a:hover {
