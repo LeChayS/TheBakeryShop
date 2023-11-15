@@ -29,7 +29,7 @@
             text-decoration: none;
             font-size: 17px;
             color: white;
-            padding: 20px 100px 20px 100px;
+            padding: 10px 20px 10px 20px;
         }
     </style>
 
@@ -137,10 +137,21 @@
                             </li>
                             <li>
                                 <div class="menu-log">
-                                    <div class="mn-log">
-                                        <button type="button" class="signin" >@Html.ActionLink("Đăng nhập", "DangNhap", "User")</button>
-                                        <button type="button" class="register" >@Html.ActionLink("Đăng ký", "DangKy", "User")</button>
-                                    </div>
+                                    @if (Session["userName"] != null)
+                                    {
+                                        <h5>Xin chào @Session["userName"]!</h5>
+                                        <div class="mn-log">
+                                            <button type="button" class="signout">@Html.ActionLink("Đăng xuất", "DangXuat", "User")</button>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="mn-log">
+                                            <button type="button" class="signin">@Html.ActionLink("Đăng nhập", "DangNhap", "User")</button>
+                                            <button type="button" class="register">@Html.ActionLink("Đăng ký", "DangKy", "User")</button>
+                                        </div>
+                                    }
+                                    
                                 </div>
                             </li>
                         </ul>
@@ -166,19 +177,34 @@
             <div class="img">
                 <img src="~/MyContent/Image/cupcake-bg.jpg" alt="bg" />
             </div>
+            
+
+
             <div class="text">
                 <div class="closePopup"><i class="fi fi-br-cross"></i></div>
+
                 <div class="group">
-                    <div class="log">
-                        <button type="button" class="signin">@Html.ActionLink("Đăng nhập", "DangNhap", "User")</button>
-                        <h3><span>Hoặc</span></h3>
-                        <button type="button" class="register">@Html.ActionLink("Đăng ký", "DangKy", "User")</button>
-                    </div>
-                    <h3><span>Hoặc đăng nhập bằng</span></h3>
-                    <div class="social-md">
-                        <a href="#"><img src="~/MyContent/Image/social-md/fb.png" /></a>
-                        <a href="#"><img src="~/MyContent/Image/social-md/gg.png" /></a>
-                    </div>
+
+                    @if (Session["userName"] != null)
+                    {
+                        <h5>Xin chào @Session["userName"]!</h5>
+                        <div class="log">
+                            <button type="button" class="signout">@Html.ActionLink("Đăng xuất", "DangXuat", "User")</button>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="log">
+                            <button type="button" class="signin">@Html.ActionLink("Đăng nhập", "DangNhap", "User")</button>
+                            <h3><span>Hoặc</span></h3>
+                            <button type="button" class="register">@Html.ActionLink("Đăng ký", "DangKy", "User")</button>
+                        </div>
+                        <h3><span>Hoặc đăng nhập bằng</span></h3>
+                        <div class="social-md">
+                            <a href="#"><img src="~/MyContent/Image/social-md/fb.png" /></a>
+                            <a href="#"><img src="~/MyContent/Image/social-md/gg.png" /></a>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

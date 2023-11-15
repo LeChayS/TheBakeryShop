@@ -23,9 +23,10 @@ namespace TheBakeryShop.Controllers
 
             
         }
-        public ActionResult ChiTietSanPham()
+        public ActionResult ChiTietSanPham(string codeP)
         {
-            return View();
+            var product = db.tbProducts.Find(codeP);
+            return View(product);
         }
         public ActionResult GioHang()
         {

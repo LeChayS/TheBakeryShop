@@ -1,4 +1,5 @@
-﻿
+﻿@model TheBakeryShop.Models.tbProduct
+
 @{
     ViewBag.Title = "Chi Tiết Sản Phẩm";
     Layout = "~/Views/Share/_MainLayout.cshtml";
@@ -23,21 +24,28 @@
 
 <div class="container">
     <div class="row">
+        @if(Model.imagePro != null && Model.imagePro.Any())
+            {
+            @foreach(var item in Model.imagePro)
+                {
+                <div class="col-lg-5 col-img">
+                    <img src="@item.ToString" alt="detail" id="productImg">
+                    <div class="row small-img-row">
+                        @*<div class="col-lg-4 small-img">
+                            <img src="~/MyContent/Image/banh-mi/banh-mi-cha-bong-rong-bien.jpg" alt="" class="img-small">
+                        </div>
+                        <div class="col-lg-4 small-img">
+                            <img src="~/MyContent/Image/banh-mi/banh-mi-hoa-cuc-bo-toi.jpg" alt="" class="img-small">
+                        </div>
+                        <div class="col-lg-4 small-img">
+                            <img src="~/MyContent/Image/banh-mi/banh-mi-man.jpg" alt="" class="img-small">
+                        </div>*@
+                    </div>
+                </div>
 
-        <div class="col-lg-5 col-img">
-            <img src="~/MyContent/Image/banh-mi/banh-mi-cha-bong.jpg" alt="detail" id="productImg">
-            <div class="row small-img-row">
-                <div class="col-lg-4 small-img">
-                    <img src="~/MyContent/Image/banh-mi/banh-mi-cha-bong-rong-bien.jpg" alt="" class="img-small">
-                </div>
-                <div class="col-lg-4 small-img">
-                    <img src="~/MyContent/Image/banh-mi/banh-mi-hoa-cuc-bo-toi.jpg" alt="" class="img-small">
-                </div>
-                <div class="col-lg-4 small-img">
-                    <img src="~/MyContent/Image/banh-mi/banh-mi-man.jpg" alt="" class="img-small">
-                </div>
-            </div>
-        </div>
+                }
+
+            }
 
         <div class="col-lg-7 pro-info">
             <h3>Bánh mì chà bông</h3>
@@ -125,4 +133,6 @@
         </div>
     </div>
 </div>
+
+
 

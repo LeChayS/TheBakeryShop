@@ -20,9 +20,9 @@
           </Key>
           <Property Name="codeCus" Type="char" MaxLength="5" Nullable="false" />
           <Property Name="nameCus" Type="nvarchar" MaxLength="150" />
-          <Property Name="address" Type="nvarchar" MaxLength="150" />
-          <Property Name="phone" Type="char" MaxLength="10" />
-          <Property Name="email" Type="nvarchar" MaxLength="150" />
+          <Property Name="addressCus" Type="nvarchar" MaxLength="150" />
+          <Property Name="phoneCus" Type="char" MaxLength="10" />
+          <Property Name="emailCus" Type="nvarchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="tbDetailBill">
           <Key>
@@ -59,13 +59,12 @@
           <Key>
             <PropertyRef Name="idUser" />
           </Key>
-          <Property Name="idUser" Type="int" Nullable="false" />
+          <Property Name="idUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="userName" Type="nvarchar" MaxLength="100" />
           <Property Name="userPass" Type="nvarchar(max)" />
-          <Property Name="userRole" Type="nvarchar" MaxLength="50" />
-          <Property Name="codeCus" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="codeCus" Type="char" MaxLength="5" />
         </EntityType>
-        <Association Name="FK__tbBill__idUser__412EB0B6">
+        <Association Name="FK__tbBill__idUser__2D27B809">
           <End Role="tbUser" Type="Self.tbUser" Multiplicity="1" />
           <End Role="tbBill" Type="Self.tbBill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -77,7 +76,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbDetailB__codeP__44FF419A">
+        <Association Name="FK__tbDetailB__codeP__30F848ED">
           <End Role="tbProduct" Type="Self.tbProduct" Multiplicity="1" />
           <End Role="tbDetailBill" Type="Self.tbDetailBill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -89,7 +88,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbDetailB__idBil__440B1D61">
+        <Association Name="FK__tbDetailB__idBil__300424B4">
           <End Role="tbBill" Type="Self.tbBill" Multiplicity="1" />
           <End Role="tbDetailBill" Type="Self.tbDetailBill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -101,7 +100,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbProduct__codeS__3E52440B">
+        <Association Name="FK__tbProduct__codeS__2A4B4B5E">
           <End Role="tbStyle" Type="Self.tbStyle" Multiplicity="1" />
           <End Role="tbProduct" Type="Self.tbProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -113,18 +112,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbUser__codeCus__3B75D760">
-          <End Role="tbCustomer" Type="Self.tbCustomer" Multiplicity="1" />
-          <End Role="tbUser" Type="Self.tbUser" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tbCustomer">
-              <PropertyRef Name="codeCus" />
-            </Principal>
-            <Dependent Role="tbUser">
-              <PropertyRef Name="codeCus" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="DBBakeryShopModelStoreContainer">
           <EntitySet Name="tbBill" EntityType="Self.tbBill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbCustomer" EntityType="Self.tbCustomer" Schema="dbo" store:Type="Tables" />
@@ -132,25 +119,21 @@
           <EntitySet Name="tbProduct" EntityType="Self.tbProduct" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbStyle" EntityType="Self.tbStyle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbUser" EntityType="Self.tbUser" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__tbBill__idUser__412EB0B6" Association="Self.FK__tbBill__idUser__412EB0B6">
+          <AssociationSet Name="FK__tbBill__idUser__2D27B809" Association="Self.FK__tbBill__idUser__2D27B809">
             <End Role="tbUser" EntitySet="tbUser" />
             <End Role="tbBill" EntitySet="tbBill" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbDetailB__codeP__44FF419A" Association="Self.FK__tbDetailB__codeP__44FF419A">
+          <AssociationSet Name="FK__tbDetailB__codeP__30F848ED" Association="Self.FK__tbDetailB__codeP__30F848ED">
             <End Role="tbProduct" EntitySet="tbProduct" />
             <End Role="tbDetailBill" EntitySet="tbDetailBill" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbDetailB__idBil__440B1D61" Association="Self.FK__tbDetailB__idBil__440B1D61">
+          <AssociationSet Name="FK__tbDetailB__idBil__300424B4" Association="Self.FK__tbDetailB__idBil__300424B4">
             <End Role="tbBill" EntitySet="tbBill" />
             <End Role="tbDetailBill" EntitySet="tbDetailBill" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbProduct__codeS__3E52440B" Association="Self.FK__tbProduct__codeS__3E52440B">
+          <AssociationSet Name="FK__tbProduct__codeS__2A4B4B5E" Association="Self.FK__tbProduct__codeS__2A4B4B5E">
             <End Role="tbStyle" EntitySet="tbStyle" />
             <End Role="tbProduct" EntitySet="tbProduct" />
-          </AssociationSet>
-          <AssociationSet Name="FK__tbUser__codeCus__3B75D760" Association="Self.FK__tbUser__codeCus__3B75D760">
-            <End Role="tbCustomer" EntitySet="tbCustomer" />
-            <End Role="tbUser" EntitySet="tbUser" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -166,8 +149,8 @@
           <Property Name="billDate" Type="DateTime" Precision="0" />
           <Property Name="idUser" Type="Int32" Nullable="false" />
           <Property Name="totalBuy" Type="Double" />
-          <NavigationProperty Name="tbUser" Relationship="Self.FK__tbBill__idUser__412EB0B6" FromRole="tbBill" ToRole="tbUser" />
-          <NavigationProperty Name="tbDetailBills" Relationship="Self.FK__tbDetailB__idBil__440B1D61" FromRole="tbBill" ToRole="tbDetailBill" />
+          <NavigationProperty Name="tbUser" Relationship="Self.FK__tbBill__idUser__2D27B809" FromRole="tbBill" ToRole="tbUser" />
+          <NavigationProperty Name="tbDetailBills" Relationship="Self.FK__tbDetailB__idBil__300424B4" FromRole="tbBill" ToRole="tbDetailBill" />
         </EntityType>
         <EntityType Name="tbCustomer">
           <Key>
@@ -175,10 +158,9 @@
           </Key>
           <Property Name="codeCus" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="nameCus" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="phone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tbUsers" Relationship="Self.FK__tbUser__codeCus__3B75D760" FromRole="tbCustomer" ToRole="tbUser" />
+          <Property Name="addressCus" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="phoneCus" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="emailCus" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="tbDetailBill">
           <Key>
@@ -190,8 +172,8 @@
           <Property Name="quantityPro" Type="Int32" />
           <Property Name="totalMoney" Type="Double" />
           <Property Name="priceProBuying" Type="Double" />
-          <NavigationProperty Name="tbBill" Relationship="Self.FK__tbDetailB__idBil__440B1D61" FromRole="tbDetailBill" ToRole="tbBill" />
-          <NavigationProperty Name="tbProduct" Relationship="Self.FK__tbDetailB__codeP__44FF419A" FromRole="tbDetailBill" ToRole="tbProduct" />
+          <NavigationProperty Name="tbBill" Relationship="Self.FK__tbDetailB__idBil__300424B4" FromRole="tbDetailBill" ToRole="tbBill" />
+          <NavigationProperty Name="tbProduct" Relationship="Self.FK__tbDetailB__codeP__30F848ED" FromRole="tbDetailBill" ToRole="tbProduct" />
         </EntityType>
         <EntityType Name="tbProduct">
           <Key>
@@ -205,8 +187,8 @@
           <Property Name="imagePro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="statePro" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="codeStyle" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="tbDetailBills" Relationship="Self.FK__tbDetailB__codeP__44FF419A" FromRole="tbProduct" ToRole="tbDetailBill" />
-          <NavigationProperty Name="tbStyle" Relationship="Self.FK__tbProduct__codeS__3E52440B" FromRole="tbProduct" ToRole="tbStyle" />
+          <NavigationProperty Name="tbDetailBills" Relationship="Self.FK__tbDetailB__codeP__30F848ED" FromRole="tbProduct" ToRole="tbDetailBill" />
+          <NavigationProperty Name="tbStyle" Relationship="Self.FK__tbProduct__codeS__2A4B4B5E" FromRole="tbProduct" ToRole="tbStyle" />
         </EntityType>
         <EntityType Name="tbStyle">
           <Key>
@@ -214,21 +196,19 @@
           </Key>
           <Property Name="codeStyle" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="nameStyle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tbProducts" Relationship="Self.FK__tbProduct__codeS__3E52440B" FromRole="tbStyle" ToRole="tbProduct" />
+          <NavigationProperty Name="tbProducts" Relationship="Self.FK__tbProduct__codeS__2A4B4B5E" FromRole="tbStyle" ToRole="tbProduct" />
         </EntityType>
         <EntityType Name="tbUser">
           <Key>
             <PropertyRef Name="idUser" />
           </Key>
-          <Property Name="idUser" Type="Int32" Nullable="false" />
+          <Property Name="idUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="userName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="userPass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="userRole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="codeCus" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="tbBills" Relationship="Self.FK__tbBill__idUser__412EB0B6" FromRole="tbUser" ToRole="tbBill" />
-          <NavigationProperty Name="tbCustomer" Relationship="Self.FK__tbUser__codeCus__3B75D760" FromRole="tbUser" ToRole="tbCustomer" />
+          <Property Name="codeCus" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="tbBills" Relationship="Self.FK__tbBill__idUser__2D27B809" FromRole="tbUser" ToRole="tbBill" />
         </EntityType>
-        <Association Name="FK__tbBill__idUser__412EB0B6">
+        <Association Name="FK__tbBill__idUser__2D27B809">
           <End Role="tbUser" Type="Self.tbUser" Multiplicity="1" />
           <End Role="tbBill" Type="Self.tbBill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -240,7 +220,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbDetailB__idBil__440B1D61">
+        <Association Name="FK__tbDetailB__idBil__300424B4">
           <End Role="tbBill" Type="Self.tbBill" Multiplicity="1" />
           <End Role="tbDetailBill" Type="Self.tbDetailBill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -252,19 +232,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbUser__codeCus__3B75D760">
-          <End Role="tbCustomer" Type="Self.tbCustomer" Multiplicity="1" />
-          <End Role="tbUser" Type="Self.tbUser" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tbCustomer">
-              <PropertyRef Name="codeCus" />
-            </Principal>
-            <Dependent Role="tbUser">
-              <PropertyRef Name="codeCus" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__tbDetailB__codeP__44FF419A">
+        <Association Name="FK__tbDetailB__codeP__30F848ED">
           <End Role="tbProduct" Type="Self.tbProduct" Multiplicity="1" />
           <End Role="tbDetailBill" Type="Self.tbDetailBill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -276,7 +244,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbProduct__codeS__3E52440B">
+        <Association Name="FK__tbProduct__codeS__2A4B4B5E">
           <End Role="tbStyle" Type="Self.tbStyle" Multiplicity="1" />
           <End Role="tbProduct" Type="Self.tbProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -295,23 +263,19 @@
           <EntitySet Name="tbProducts" EntityType="Self.tbProduct" />
           <EntitySet Name="tbStyles" EntityType="Self.tbStyle" />
           <EntitySet Name="tbUsers" EntityType="Self.tbUser" />
-          <AssociationSet Name="FK__tbBill__idUser__412EB0B6" Association="Self.FK__tbBill__idUser__412EB0B6">
+          <AssociationSet Name="FK__tbBill__idUser__2D27B809" Association="Self.FK__tbBill__idUser__2D27B809">
             <End Role="tbUser" EntitySet="tbUsers" />
             <End Role="tbBill" EntitySet="tbBills" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbDetailB__idBil__440B1D61" Association="Self.FK__tbDetailB__idBil__440B1D61">
+          <AssociationSet Name="FK__tbDetailB__idBil__300424B4" Association="Self.FK__tbDetailB__idBil__300424B4">
             <End Role="tbBill" EntitySet="tbBills" />
             <End Role="tbDetailBill" EntitySet="tbDetailBills" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbUser__codeCus__3B75D760" Association="Self.FK__tbUser__codeCus__3B75D760">
-            <End Role="tbCustomer" EntitySet="tbCustomers" />
-            <End Role="tbUser" EntitySet="tbUsers" />
-          </AssociationSet>
-          <AssociationSet Name="FK__tbDetailB__codeP__44FF419A" Association="Self.FK__tbDetailB__codeP__44FF419A">
+          <AssociationSet Name="FK__tbDetailB__codeP__30F848ED" Association="Self.FK__tbDetailB__codeP__30F848ED">
             <End Role="tbProduct" EntitySet="tbProducts" />
             <End Role="tbDetailBill" EntitySet="tbDetailBills" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbProduct__codeS__3E52440B" Association="Self.FK__tbProduct__codeS__3E52440B">
+          <AssociationSet Name="FK__tbProduct__codeS__2A4B4B5E" Association="Self.FK__tbProduct__codeS__2A4B4B5E">
             <End Role="tbStyle" EntitySet="tbStyles" />
             <End Role="tbProduct" EntitySet="tbProducts" />
           </AssociationSet>
@@ -337,9 +301,9 @@
               <MappingFragment StoreEntitySet="tbCustomer">
                 <ScalarProperty Name="codeCus" ColumnName="codeCus" />
                 <ScalarProperty Name="nameCus" ColumnName="nameCus" />
-                <ScalarProperty Name="address" ColumnName="address" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="addressCus" ColumnName="addressCus" />
+                <ScalarProperty Name="phoneCus" ColumnName="phoneCus" />
+                <ScalarProperty Name="emailCus" ColumnName="emailCus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -382,7 +346,6 @@
                 <ScalarProperty Name="idUser" ColumnName="idUser" />
                 <ScalarProperty Name="userName" ColumnName="userName" />
                 <ScalarProperty Name="userPass" ColumnName="userPass" />
-                <ScalarProperty Name="userRole" ColumnName="userRole" />
                 <ScalarProperty Name="codeCus" ColumnName="codeCus" />
               </MappingFragment>
             </EntityTypeMapping>

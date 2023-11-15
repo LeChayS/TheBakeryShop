@@ -181,7 +181,7 @@ ul {
 
 /*responsive*/
 @media(max-width: 991px) {
-    .header .menu > ul > li > a i {
+    .header .menu > ul > li > i {
         color: black;
         position: absolute;
         height: 50px;
@@ -342,6 +342,7 @@ ul {
         height: 100%;
         overflow-x: hidden;
         overflow-y: auto;
+        padding-left:0;
     }
 
     .header .menu > ul > li .sub-menu.mega-menu,

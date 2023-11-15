@@ -36,6 +36,7 @@ namespace TheBakeryShop.Controllers
                 }
                 else
                 {
+                    Session["userName"] = user.userName;
                     return RedirectToAction("TrangChu","Home");
                 }
             }   
@@ -44,7 +45,6 @@ namespace TheBakeryShop.Controllers
                 return View("DangNhap");
             }
         }
-
         public ActionResult DangKy()
         {
             return View();
@@ -61,6 +61,11 @@ namespace TheBakeryShop.Controllers
             {
                 return View("DangKy");
             }
+        }
+        public ActionResult DangXuat()
+        {
+            Session.Clear();
+            return RedirectToAction("TrangChu","Home");
         }
     }
 }

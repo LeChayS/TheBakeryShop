@@ -13,22 +13,21 @@ CREATE TABLE tbCustomer
 (
   codeCus CHAR(5) NOT NULL,
   nameCus NVARCHAR(150) NULL,
-  address NVARCHAR(150) NULL,
-  phone CHAR(10) NULL,
-  email NVARCHAR(150) NULL,
+  addressCus NVARCHAR(150) NULL,
+  phoneCus CHAR(10) NULL,
+  emailCus NVARCHAR(150) NULL,
   PRIMARY KEY (codeCus)
 );
 
 CREATE TABLE tbUser
 (
   idUser INT IDENTITY(1,1) NOT NULL,
-  --codeCus INT NOT NULL,
   userName NVARCHAR(100) NULL,
   userPass NVARCHAR(max) NULL,
-  userRole NVARCHAR(50) NULL,
-  codeCus CHAR(5) NOT NULL,
+  --userRole NVARCHAR(50) NULL,
+  codeCus CHAR(5) NULL,
   PRIMARY KEY (idUser),
-  FOREIGN KEY (codeCus) REFERENCES tbCustomer(codeCus)
+  --FOREIGN KEY (codeCus) REFERENCES tbCustomer(codeCus)
   --UNIQUE (codeCus)
 );
 
@@ -100,16 +99,16 @@ INSERT into tbCustomer VALUES('KH010',N'Nguyễn An',N'TP HCM',0913455564,'ngan@
 select*from tbCustomer;
 
 --tbUser
-INSERT into tbUser VALUES('ngthihue','ngthihue123',null,'KH001');
-INSERT into tbUser VALUES('trthilan','trthilan123',null,'KH002');
-INSERT into tbUser VALUES('dkv','dkv123',null,'KH003');
-INSERT into tbUser VALUES('ngthicuc','ngthicuc123',null,'KH004');
-INSERT into tbUser VALUES('nghoa','nghoa123',null,'KH005');
-INSERT into tbUser VALUES('lenhu','lenhu123',null,'KH006');
-INSERT into tbUser VALUES('nghung','nghung123',null,'KH007');
-INSERT into tbUser VALUES('maihuong','maihuong123',null,'KH008');
-INSERT into tbUser VALUES('ngvannam','ngvannam123',null,'KH009');
-INSERT into tbUser VALUES('ngan','ngan123',null,'KH010');
+INSERT into tbUser VALUES('ngthihue','ngthihue123','KH001');
+INSERT into tbUser VALUES('trthilan','trthilan123','KH001');
+INSERT into tbUser VALUES('dkv','dkv123','KH003');
+INSERT into tbUser VALUES('ngthicuc','ngthicuc123','KH004');
+INSERT into tbUser VALUES('nghoa','nghoa123','KH005');
+INSERT into tbUser VALUES('lenhu','lenhu123','KH006');
+INSERT into tbUser VALUES('nghung','nghung123','KH007');
+INSERT into tbUser VALUES('maihuong','maihuong123','KH008');
+INSERT into tbUser VALUES('ngvannam','ngvannam123','KH009');
+INSERT into tbUser VALUES('ngan','ngan123','KH010');
 select*from tbUser;
 
 
