@@ -27,7 +27,7 @@ CREATE TABLE tbUser
   --userRole NVARCHAR(50) NULL,
   codeCus CHAR(5) NULL,
   PRIMARY KEY (idUser),
-  --FOREIGN KEY (codeCus) REFERENCES tbCustomer(codeCus)
+  FOREIGN KEY (codeCus) REFERENCES tbCustomer(codeCus)
   --UNIQUE (codeCus)
 );
 
@@ -49,7 +49,7 @@ CREATE TABLE tbProduct
 
 CREATE TABLE tbBill
 (
-  idBill INT NOT NULL,
+  idBill INT IDENTITY(1,1) NOT NULL,
   billDate DATE NULL,
   idUser INT NOT NULL,
   totalBuy FLOAT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE tbBill
 
 CREATE TABLE tbDetailBill
 (
-  idBill INT NOT NULL,
+  idBill INT IDENTITY(1,1) NOT NULL,
   codePro CHAR(5) NOT NULL,
   quantityPro INT NULL,
   totalMoney FLOAT NULL,
@@ -278,18 +278,18 @@ INSERT into tbProduct VALUES('HW008',N'Tiramisu Halloween',null,50000,null,
 select*from tbProduct;
 
 --tbBill
-INSERT into tbBill VALUES(1,'2023-06-15',003,250000);
-INSERT into tbBill VALUES(2,'2023-02-9',006,50000);
-INSERT into tbBill VALUES(3,'2023-12-28',005,150000);
-INSERT into tbBill VALUES(4,'2023-01-30',002,76000);
-INSERT into tbBill VALUES(5,'2023-11-20',008,91000);
+INSERT into tbBill VALUES('2023-06-15',003,250000);
+INSERT into tbBill VALUES('2023-02-9',006,50000);
+INSERT into tbBill VALUES('2023-12-28',005,150000);
+INSERT into tbBill VALUES('2023-01-30',002,76000);
+INSERT into tbBill VALUES('2023-11-20',008,91000);
 select*from tbBill;
 
 --tbDetailBill
-INSERT into tbDetailBill VALUES(1,'BL001',10,null,20000);
-INSERT into tbDetailBill VALUES(2,'SK001',5,null,50000);
-INSERT into tbDetailBill VALUES(3,'SK001',15,null,100000);
-INSERT into tbDetailBill VALUES(4,'SK001',20,null,150000);
-INSERT into tbDetailBill VALUES(5,'SK001',2,null,20000);
+INSERT into tbDetailBill VALUES('BL001',10,null,20000);
+INSERT into tbDetailBill VALUES('SK001',5,null,50000);
+INSERT into tbDetailBill VALUES('SK001',15,null,100000);
+INSERT into tbDetailBill VALUES('SK001',20,null,150000);
+INSERT into tbDetailBill VALUES('SK001',2,null,20000);
 select*from tbDetailBill;
 

@@ -131,6 +131,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="MyContent\Css\admin.css" />
+    <Content Include="MyContent\Css\admin_trangchinh.css" />
     <Content Include="MyContent\Css\bg-news.css" />
     <Content Include="MyContent\Css\cart.css" />
     <Content Include="MyContent\Css\contact.css" />
@@ -229,6 +231,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
@@ -316,6 +319,8 @@
     <Content Include="Views\User\DangKy.cshtml" />
     <Content Include="Views\Product\Style.cshtml" />
     <Content Include="Views\Product\DMSanPham.cshtml" />
+    <Content Include="Views\Share\_AdminLayout.cshtml" />
+    <Content Include="Views\Admin\TrangChinh.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

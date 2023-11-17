@@ -14,10 +14,19 @@ namespace TheBakeryShop.Models
     
     public partial class tbCustomer
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tbCustomer()
+        {
+            this.tbUsers = new HashSet<tbUser>();
+        }
+    
         public string codeCus { get; set; }
         public string nameCus { get; set; }
         public string addressCus { get; set; }
         public string phoneCus { get; set; }
         public string emailCus { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbUser> tbUsers { get; set; }
     }
 }
