@@ -1,0 +1,58 @@
+﻿@model IEnumerable<TheBakeryShop.Models.tbDetailBill>
+
+@{
+    ViewBag.Title = "Quản lý đơn hàng";
+    Layout = "~/Views/Share/_AdminLayout.cshtml";
+}
+
+<h2>DANH SÁCH ĐƠN HÀNG</h2>
+
+<p>
+    @Html.ActionLink("Tạo đơn hàng mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idBill)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.codePro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.priceProBuying)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantityPro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.totalMoney)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idBill)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.codePro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.priceProBuying)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantityPro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.totalMoney)
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh sửa", "Edit", new {  id=item.idBill  }) |
+            @Html.ActionLink("Chi tiết", "Details", new {  id=item.idBill  }) |
+            @Html.ActionLink("Xóa", "Delete", new {  id=item.idBill  })
+        </td>
+    </tr>
+}
+
+</table>

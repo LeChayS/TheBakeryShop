@@ -23,7 +23,7 @@ namespace TheBakeryShop.Models
             this.tbBills = new HashSet<tbBill>();
         }
 
-        [DisplayName("ID User")]
+        [DisplayName("Mã người dùng")]
         [Required(ErrorMessage = "not empty")]
         public int idUser { get; set; }
 
