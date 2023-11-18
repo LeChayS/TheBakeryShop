@@ -1,13 +1,13 @@
-﻿@model IEnumerable<TheBakeryShop.Models.tbProduct>
-@*@using TheBakeryShop.Models;
-    @using PagedList.Mvc;
-    @model PagedList.PagedList<tbProduct>*@
-
+﻿
 @{
-    ViewBag.Title = "Sản phẩm";
+    ViewBag.Title = "KQTimKiem";
     Layout = "~/Views/Share/_MainLayout.cshtml";
 }
-
+@using TheBakeryShop.Models;
+@model IEnumerable<TheBakeryShop.Models.tbProduct>
+@*
+    @using PagedList.Mvc;
+    @model PagedList.PagedList<tbProduct>*@
 <link href="~/MyContent/Css/product.css" rel="stylesheet" />
 <link href="~/MyContent/Css/bg-news.css" rel="stylesheet" />
 
@@ -159,14 +159,16 @@
 
             </div>
             @*<div class="dlink">
-                Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
-                /@Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))
-            </div>*@
+                    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+                    /@Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))
+                </div>*@
             @*@Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))*@
         </div>
 
     </div>
 </div>
+
+
 
 
 

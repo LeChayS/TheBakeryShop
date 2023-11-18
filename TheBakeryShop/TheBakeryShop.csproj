@@ -236,6 +236,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\TimKiemController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -318,9 +319,10 @@
     <Content Include="Views\User\DangNhap.cshtml" />
     <Content Include="Views\User\DangKy.cshtml" />
     <Content Include="Views\Product\Style.cshtml" />
-    <Content Include="Views\Product\DMSanPham.cshtml" />
     <Content Include="Views\Share\_AdminLayout.cshtml" />
     <Content Include="Views\Admin\TrangChinh.cshtml" />
+    <Content Include="Views\Product\DMSanPham.cshtml" />
+    <Content Include="Views\TimKiem\KQTimKiem.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
