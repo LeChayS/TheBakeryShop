@@ -132,7 +132,6 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="MyContent\Css\admin.css" />
-    <Content Include="MyContent\Css\admin_trangchinh.css" />
     <Content Include="MyContent\Css\bg-news.css" />
     <Content Include="MyContent\Css\cart.css" />
     <Content Include="MyContent\Css\contact.css" />
@@ -334,7 +333,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Client\" />
     <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
   <ItemGroup>
