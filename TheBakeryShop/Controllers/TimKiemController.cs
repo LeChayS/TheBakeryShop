@@ -11,15 +11,9 @@ namespace TheBakeryShop.Controllers
     {
         // GET: TimKiem
         DBBakeryShopEntities db = new DBBakeryShopEntities();
-
-        public ActionResult Index()
-        {
-            return View();
-        }
         public ActionResult KQTimKiem(string keys)
         {
             var list = db.tbProducts.Where(n => n.namePro.Contains(keys));
-            
             return View(list.OrderBy(n=>n.namePro));
         }
     }
