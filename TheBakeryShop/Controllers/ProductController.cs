@@ -28,7 +28,7 @@ namespace TheBakeryShop.Controllers
         }
         public ActionResult ChiTietSanPham(string codeP)
         {
-            var product = db.tbProducts.Find(codeP);
+            var product = db.tbProducts.Where(m =>m.codePro == codeP).FirstOrDefault() ;
             return View(product);
         }
         public ActionResult GioHang()

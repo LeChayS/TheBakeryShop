@@ -1,0 +1,74 @@
+﻿@*@using TheBakeryShop.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<tbProduct>*@
+@model IEnumerable<TheBakeryShop.Models.tbProduct>
+
+@{
+    ViewBag.Title = "Quản lý sản phẩm";
+    Layout = "~/Views/Share/_AdminLayout.cshtml";
+}
+
+<h2>DANH SÁCH SẢN PHẨM</h2>
+
+<p>
+    @Html.ActionLink("Tạo sản phẩm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codePro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.namePro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pricePro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sizePro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imagePro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statePro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.codeStyle)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codePro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.namePro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pricePro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sizePro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.imagePro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.statePro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.codeStyle)
+            </td>
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.codePro }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.codePro }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.codePro })
+            </td>
+        </tr>
+    }
+    @*@Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))*@
+</table>

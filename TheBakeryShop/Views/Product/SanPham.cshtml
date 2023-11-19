@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<TheBakeryShop.Models.tbProduct>
 @*@using TheBakeryShop.Models;
-    @using PagedList.Mvc;
-    @model PagedList.PagedList<tbProduct>*@
+@using PagedList.Mvc;
+@model PagedList.PagedList<tbProduct>*@
 
 @{
     ViewBag.Title = "Sản phẩm";
@@ -121,9 +121,9 @@
 
         <div class="col-lg-9">
 
-            @*@{Html.RenderAction("DMSanPham", "Product"); }*@
+            @{Html.RenderAction("DMSanPham", "Product"); }
 
-            <div class="row products-list">
+            @*<div class="row products-list">
 
                 @foreach (var pro in Model)
                 {
@@ -156,6 +156,8 @@
                         </div>
                     </div>
                 }
+
+            </div>*@
 
             </div>
             @*<div class="dlink">
