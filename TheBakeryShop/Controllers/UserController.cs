@@ -55,7 +55,7 @@ namespace TheBakeryShop.Controllers
             {
                 db.tbUsers.Add(_user);
                 db.SaveChanges();
-                return RedirectToAction("TrangChu", "Home");
+                return RedirectToAction("DangNhap", "User");
             }
             catch
             {

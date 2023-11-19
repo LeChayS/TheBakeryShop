@@ -14,12 +14,17 @@ namespace TheBakeryShop.Controllers
     {
         DBBakeryShopEntities db = new DBBakeryShopEntities();
         // GET: Product
-        public ActionResult SanPham(string style)
+        public ActionResult SanPham(string style, int? page)
         {
             if (style != null)
                 return View(db.tbProducts.Where(s => s.codeStyle == style));
             else
                 return View(db.tbProducts.ToList());
+            ////Phân trang
+            //int pageSize = 10;
+            //int pageNumber = (page ?? 1);
+            //return View(db.tbProducts.OrderBy(n => n.codePro).ToPagedList(pageNumber,pageSize));
+            
         }
         public ActionResult ChiTietSanPham(string codeP)
         {
