@@ -1,7 +1,7 @@
-﻿@model IEnumerable<TheBakeryShop.Models.tbProduct>
-@*@using TheBakeryShop.Models;
+﻿@*@model IEnumerable<TheBakeryShop.Models.tbProduct>*@
+@using TheBakeryShop.Models;
     @using PagedList.Mvc;
-    @model PagedList.PagedList<tbProduct>*@
+    @model PagedList.PagedList<tbProduct>
 
 @{
     ViewBag.Title = "Sản phẩm";
@@ -137,9 +137,9 @@
 
         <div class="col-lg-9">
 
-            @{Html.RenderAction("DMSanPham", "Product"); }
+            @*@{Html.RenderAction("DMSanPham", "Product"); }*@
 
-            @*<div class="row products-list">
+            <div class="row products-list">
 
                     @foreach (var pro in Model)
                     {
@@ -155,7 +155,7 @@
 
                                 <div class="overlay">
                                     <button type="button" class="btn btn-secondary" title="quick shop">
-                                        <a href="@Url.Action("ChiTietSanPham", "Product")" style="text-decoration:none;color:white;">
+                                        <a href="@Url.Action("ChiTietSanPham", "Product", new {codeP = pro.codePro})" style="text-decoration:none;color:white;">
                                             <i class="fi fi-br-search search-icon"></i>
                                         </a>
                                     </button>
@@ -173,15 +173,15 @@
                         </div>
                     }
 
-                </div>*@
+                </div>
 
-            </div>
+        </div>
             @*<div class="dlink">
                 Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
                 /@Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))
             </div>*@
-            @*@Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))*@
-        </div>
+            @Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))
+        
 
     </div>
 </div>

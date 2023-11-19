@@ -13,6 +13,7 @@ namespace TheBakeryShop.Models
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public partial class tbProduct
     {
@@ -22,15 +23,15 @@ namespace TheBakeryShop.Models
             this.tbDetailBills = new HashSet<tbDetailBill>();
         }
 
-        [DisplayName("Mã sản phẩm")]
+        [DisplayName("Mã SP")]
         [Required(ErrorMessage = "not empty")]
         public string codePro { get; set; }
 
-        [DisplayName("Tên sản phẩm")]
+        [DisplayName("Tên SP")]
         [Required(ErrorMessage = "not empty")]
         public string namePro { get; set; }
 
-        [DisplayName("Thông tin sản phẩm")]
+        [DisplayName("Chi tiết")]
         [Required(ErrorMessage = "not empty")]
         public string descriptionPro { get; set; }
 
@@ -53,7 +54,11 @@ namespace TheBakeryShop.Models
         [DisplayName("Phân loại")]
         [Required(ErrorMessage = "not empty")]
         public string codeStyle { get; set; }
-    
+
+        [NotMapped]
+        public string NameStyle { get; set; }
+
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbDetailBill> tbDetailBills { get; set; }
         public virtual tbStyle tbStyle { get; set; }

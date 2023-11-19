@@ -19,6 +19,7 @@ font-family: 'Playpen Sans', cursive; tựa nhỏ
     z-index: 99;
     transition: all 0.5s ease;
     font-family: 'Comfortaa', sans-serif;
+    background:black;
 }
 .sidebar.open{
   width: 250px;
@@ -174,7 +175,6 @@ font-family: 'Playpen Sans', cursive; tựa nhỏ
 }
 .home-section {
     position: relative;
-    background: #E4E9F7;
     min-height: 100vh;
     top: 0;
     left: 78px;

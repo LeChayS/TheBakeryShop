@@ -8,8 +8,8 @@
         <EntityTypeShape EntityType="DBBakeryShopModel.tbBill" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="DBBakeryShopModel.tbCustomer" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="DBBakeryShopModel.tbDetailBill" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBBakeryShopModel.tbProduct" Width="1.5" PointX="4.875" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBBakeryShopModel.tbStyle" Width="1.5" PointX="1.875" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBBakeryShopModel.tbProduct" Width="1.5" PointX="5.125" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBBakeryShopModel.tbStyle" Width="1.5" PointX="2.875" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DBBakeryShopModel.tbUser" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="DBBakeryShopModel.FK__tbBill__idUser__534D60F1" ManuallyRouted="false" />
         <AssociationConnector Association="DBBakeryShopModel.FK__tbDetailB__idBil__5629CD9C" ManuallyRouted="false" />

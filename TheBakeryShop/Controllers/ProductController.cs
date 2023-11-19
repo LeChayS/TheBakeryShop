@@ -14,20 +14,41 @@ namespace TheBakeryShop.Controllers
     {
         DBBakeryShopEntities db = new DBBakeryShopEntities();
         // GET: Product
-        public ActionResult SanPham(string style, int? page)
+        public ActionResult SanPham(string style, int? page, double min = double.MinValue, double max = double.MaxValue)
         {
-            if (style != null)
-                return View(db.tbProducts.Where(s => s.codeStyle == style));
-            else
-                return View(db.tbProducts.ToList());
+            //if (style != null)
+            //    return View(db.tbProducts.Where(s => s.codeStyle == style));
+            //else
+            //    return View(db.tbProducts.ToList());
             ////Phân trang
             //int pageSize = 10;
             //int pageNumber = (page ?? 1);
             //return View(db.tbProducts.OrderBy(n => n.codePro).ToPagedList(pageNumber,pageSize));
-            
+            int pageSize = 12;
+            int pageNum = (page ?? 1);
+            if (style == null)
+            {
+                var productList = db.tbProducts.OrderByDescending(x => x.namePro);
+                return View(productList.ToPagedList(pageNum, pageSize));
+            }
+            else
+            {
+                var productList = db.tbProducts.OrderByDescending(x => x.namePro)
+                    .Where(p => p.codeStyle == style);
+                return View(productList);
+            }
+
         }
         public ActionResult ChiTietSanPham(string codeP)
         {
+            List<tbStyle> proStyle = db.tbStyles.ToList();
+            List<tbProduct> pro = proStyle.Select(
+                x => new tbProduct
+                {
+                    NameStyle = x.nameStyle
+                }
+                ).ToList();
+
             var product = db.tbProducts.Where(m =>m.codePro == codeP).FirstOrDefault() ;
             return View(product);
         }

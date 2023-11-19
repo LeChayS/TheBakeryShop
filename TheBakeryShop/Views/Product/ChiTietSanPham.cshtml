@@ -1,7 +1,7 @@
 ﻿@model TheBakeryShop.Models.tbProduct
 
 @{
-    ViewBag.Title = "Chi Tiết Sản Phẩm";
+    ViewBag.Title = Model.namePro;
     Layout = "~/Views/Share/_MainLayout.cshtml";
 }
 
@@ -29,9 +29,9 @@
 
 <div class="container">
     <div class="row">
-        
+
         <div class="col-lg-5 col-img">
-            <img src="@Model.imagePro" alt="detail" id="productImg">
+            <img src="@Url.Content(Model.imagePro)" alt="detail" id="productImg">
             <div class="row small-img-row">
                 @*<div class="col-lg-4 small-img">
                         <img src="~/MyContent/Image/banh-mi/banh-mi-cha-bong-rong-bien.jpg" alt="" class="img-small">
@@ -48,7 +48,7 @@
         <div class="col-lg-7 pro-info">
             <h3>@Model.namePro</h3>
             <div class="status">
-                <h5>Loại bánh: <a href="@Url.Action("SanPham","Product")">Bánh mì</a></h5>
+                <h5>Loại bánh: <a href="@Url.Action("SanPham","Product")">@Model.NameStyle</a></h5>
                 <h5>Tình trạng: @Model.statePro</h5>
                 <p>@Model.pricePro đ</p>
             </div>
@@ -62,77 +62,74 @@
     </div>
 </div>
 
-<div class="relative">
+@*<div class="relative">
     <h2>Sản phẩm liên quan</h2>
     <div class="container">
         <div class="pd-relative">
             <div class="row products-list">
 
                 <div class="col-lg-3">
-                <div class="product-top">
+                    <div class="product-top">
 
-                    <div class="pd-img">
-                        <div class="pd-img-child">
-                            <img src="~/MyContent/Image/banh-mi/banh-mi-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
+                        <div class="pd-img">
+                            <div class="pd-img-child">
+                                <img src="~/MyContent/Image/banh-mi/banh-mi-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
+                            </div>
                         </div>
+
+
                     </div>
+                    <div class="product-bottom text-center">
+                        <h5>Bánh bông lan cuộn chà bông</h5>
 
-
+                    </div>
                 </div>
-                <div class="product-bottom text-center">
-                    <h5>Bánh bông lan cuộn chà bông</h5>
-
-                </div>
-            </div>
 
                 <div class="col-lg-3">
-                <div class="product-top">
-                    <div class="pd-img">
-                        <div class="pd-img-child">
-                            <img src="~/MyContent/Image/banh-mi/banh-mi-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
+                    <div class="product-top">
+                        <div class="pd-img">
+                            <div class="pd-img-child">
+                                <img src="~/MyContent/Image/banh-mi/banh-mi-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
+                            </div>
                         </div>
+
                     </div>
+                    <div class="product-bottom text-center">
+                        <h5>Bánh bông lan cuộn chà bông</h5>
 
+                    </div>
                 </div>
-                <div class="product-bottom text-center">
-                    <h5>Bánh bông lan cuộn chà bông</h5>
-
-                </div>
-            </div>
 
                 <div class="col-lg-3">
-                <div class="product-top">
-                    <div class="pd-img">
-                        <div class="pd-img-child">
-                            <img src="~/MyContent/Image/banh-mi/banh-mi-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
+                    <div class="product-top">
+                        <div class="pd-img">
+                            <div class="pd-img-child">
+                                <img src="~/MyContent/Image/banh-mi/banh-mi-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
+                            </div>
                         </div>
+
                     </div>
+                    <div class="product-bottom text-center">
+                        <h5>Bánh bông lan cuộn chà bông</h5>
 
+                    </div>
                 </div>
-                <div class="product-bottom text-center">
-                    <h5>Bánh bông lan cuộn chà bông</h5>
-
-                </div>
-            </div>
 
                 <div class="col-lg-3">
-                <div class="product-top">
-                    <div class="pd-img">
-                        <div class="pd-img-child">
-                            <img src="~/MyContent/Image/banh-mi/banh-mi-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
+                    <div class="product-top">
+                        <div class="pd-img">
+                            <div class="pd-img-child">
+                                <img src="~/MyContent/Image/banh-mi/banh-mi-cha-bong.jpg" alt="list-ck" class="img" style="width:100%" />
+                            </div>
                         </div>
+
                     </div>
+                    <div class="product-bottom text-center">
+                        <h5>Bánh bông lan cuộn chà bông</h5>
+                    </div>
+                </div>
 
-                </div>
-                <div class="product-bottom text-center">
-                    <h5>Bánh bông lan cuộn chà bông</h5>
-                </div>
             </div>
-
         </div>
     </div>
-    </div>
-</div>
-
-
-
+</div>*@
