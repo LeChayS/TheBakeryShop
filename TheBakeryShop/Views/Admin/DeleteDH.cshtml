@@ -1,0 +1,64 @@
+﻿@model TheBakeryShop.Models.tbDetailBill
+
+@{
+    ViewBag.Title = "Xóa đơn hàng";
+    Layout = "~/Views/Share/_AdminLayout.cshtml";
+}
+
+<h2>Xóa đơn hàng</h2>
+
+<h3>Bạn có chắc chắn muốn xóa đơn hàng này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idBill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idBill)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codePro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codePro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quantityPro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantityPro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.totalMoney)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.totalMoney)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.priceProBuying)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.priceProBuying)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+           @Html.ActionLink("Quay lại", "DonHang", null, new { @class = "btn btn-secondary" })
+        </div>
+    }
+</div>

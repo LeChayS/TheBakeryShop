@@ -11,7 +11,7 @@
 <h2>DANH SÁCH SẢN PHẨM</h2>
 
 <p>
-    @Html.ActionLink("Tạo sản phẩm mới", "Create")
+    @Html.ActionLink("Tạo sản phẩm mới", "CreateSP", null, new { @class = "btn btn-secondary" })
 </p>
 <table class="table">
     <tr>
@@ -64,9 +64,9 @@
                 @Html.DisplayFor(modelItem => item.codeStyle)
             </td>
             <td>
-                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.codePro }) |
-                @Html.ActionLink("Chi tiết", "Details", new { id = item.codePro }) |
-                @Html.ActionLink("Xóa", "Delete", new { id = item.codePro })
+                @Html.ActionLink("Chỉnh sửa", "EditSP", new { id = item.codePro }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Chi tiết", "DetailSP", new { id = item.codePro }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Xóa", "DeleteSP", new { id = item.codePro }, new { @class = "btn btn-danger" })
             </td>
         </tr>
     }

@@ -1,0 +1,56 @@
+﻿@model TheBakeryShop.Models.tbUser
+
+@{
+    ViewBag.Title = "Xóa người dùng";
+    Layout = "~/Views/Share/_AdminLayout.cshtml";
+}
+
+<h2>Xóa người dùng</h2>
+
+<h3>Bạn có chắc chắn muốn xóa người dùng này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.userName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.userPass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userPass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codeCus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codeCus)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Quay lại", "NguoiDung",null,new {@class="btn btn-secondary"})
+        </div>
+    }
+</div>

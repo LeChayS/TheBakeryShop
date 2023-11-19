@@ -41,14 +41,13 @@ namespace TheBakeryShop.Controllers
         }
         public ActionResult ChiTietSanPham(string codeP)
         {
-            List<tbStyle> proStyle = db.tbStyles.ToList();
-            List<tbProduct> pro = proStyle.Select(
-                x => new tbProduct
-                {
-                    NameStyle = x.nameStyle
-                }
-                ).ToList();
-
+            //List<tbStyle> proStyle = db.tbStyles.ToList();
+            //List<tbProduct> pro = proStyle.Select(
+            //    x => new tbProduct
+            //    {
+            //        NameStyle = x.nameStyle
+            //    }
+            //    ).ToList();
             var product = db.tbProducts.Where(m =>m.codePro == codeP).FirstOrDefault() ;
             return View(product);
         }

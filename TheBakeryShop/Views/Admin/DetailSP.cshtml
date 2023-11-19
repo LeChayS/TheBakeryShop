@@ -1,0 +1,82 @@
+﻿@model TheBakeryShop.Models.tbProduct
+
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Views/Share/_AdminLayout.cshtml";
+}
+
+<h2>Chi tiết sản phẩm</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.codePro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codePro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.namePro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.namePro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descriptionPro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descriptionPro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pricePro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pricePro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sizePro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sizePro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imagePro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imagePro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.statePro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.statePro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codeStyle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codeStyle)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "EditSP", new {  id = Model.codePro }, new {@class="btn btn-info"}) |
+    @Html.ActionLink("Quay lại", "SanPham", null, new { @class = "btn btn-secondary" })
+</p>
