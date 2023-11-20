@@ -8,15 +8,22 @@
 @*
     @using PagedList.Mvc;
     @model PagedList.PagedList<tbProduct>*@
+<!--bootstrap-->
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+<!--css,js-->
 <link href="~/MyContent/Css/product.css" rel="stylesheet" />
 <link href="~/MyContent/Css/bg-news.css" rel="stylesheet" />
 
-<script src="~/Scripts/bootstrap.min.js"></script>
-<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<!--icon-->
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css'>
 
+<!--font-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Merienda&family=Playpen+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Asap&family=Comfortaa&family=Merienda&family=Playpen+Sans&display=swap" rel="stylesheet">
 
 <div class="bg-news">
     <h1>Sản phẩm</h1>
@@ -139,20 +146,26 @@
 
                             <div class="overlay">
                                 <button type="button" class="btn btn-secondary" title="quick shop">
-                                    <a href="@Url.Action("ChiTietSanPham", "Product")" style="text-decoration:none;color:white;">
+                                    <a href="@Url.Action("ChiTietSanPham", "Product",new {code = pro.codePro})" style="text-decoration:none;color:white;">
                                         <i class="fi fi-br-search search-icon"></i>
                                     </a>
                                 </button>
                                 <button type="button" class="btn btn-secondary" title="quick shop">
-                                    <a href="@Url.Action("GioHang", "Product")" style="text-decoration:none;color:white;">
+                                    @*<a href="@Url.Action("GioHang", "Product")" style="text-decoration:none;color:white;">
+                                <i class="fi fi-br-shopping-cart cart-icon"></i>
+                            </a>*@
+                                    <a href="~/ShoppingCart/AddToCart/@pro.codePro" style="text-decoration:none;color:white;">
                                         <i class="fi fi-br-shopping-cart cart-icon"></i>
                                     </a>
+
                                 </button>
                             </div>
                         </div>
                         <div class="product-bottom text-center">
                             <h5>@Html.DisplayFor(Model => pro.namePro)</h5>
                             <h6>@Html.DisplayFor(Model => pro.pricePro)đ</h6>
+
+
                         </div>
                     </div>
                 }

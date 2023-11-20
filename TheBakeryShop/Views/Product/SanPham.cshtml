@@ -147,7 +147,7 @@
 
                             <div class="overlay">
                                 <button type="button" class="btn btn-secondary" title="quick shop">
-                                    <a href="@Url.Action("ChiTietSanPham", "Product")" style="text-decoration:none;color:white;">
+                                    <a href="@Url.Action("ChiTietSanPham", "Product",new {code = pro.codePro})" style="text-decoration:none;color:white;">
                                         <i class="fi fi-br-search search-icon"></i>
                                     </a>
                                 </button>
@@ -156,8 +156,8 @@
                                         <i class="fi fi-br-shopping-cart cart-icon"></i>
                                     </a>*@
                                         <a href="~/ShoppingCart/AddToCart/@pro.codePro" style="text-decoration:none;color:white;">
-                                    <i class="fi fi-br-shopping-cart cart-icon"></i>
-                            </a>
+                                            <i class="fi fi-br-shopping-cart cart-icon"></i>
+                                        </a>
 
                                 </button>
                             </div>

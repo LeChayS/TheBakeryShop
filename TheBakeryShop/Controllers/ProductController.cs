@@ -39,16 +39,9 @@ namespace TheBakeryShop.Controllers
             }
 
         }
-        public ActionResult ChiTietSanPham(string codeP)
+        public ActionResult ChiTietSanPham(string code)
         {
-            //List<tbStyle> proStyle = db.tbStyles.ToList();
-            //List<tbProduct> pro = proStyle.Select(
-            //    x => new tbProduct
-            //    {
-            //        NameStyle = x.nameStyle
-            //    }
-            //    ).ToList();
-            var product = db.tbProducts.Where(m =>m.codePro == codeP).FirstOrDefault() ;
+            var product = db.tbProducts.Where(m =>m.codePro == code).FirstOrDefault();
             return View(product);
         }
         public ActionResult GioHang()
