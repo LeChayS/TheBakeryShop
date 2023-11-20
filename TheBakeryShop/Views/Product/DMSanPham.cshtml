@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "DMSanPham";
-    Layout = "~/Views/Share/_MainLayout.cshtml";
+    //Layout = "~/Views/Share/_MainLayout.cshtml";
 }
 @using TheBakeryShop.Models;
 @using PagedList.Mvc;
@@ -47,4 +47,4 @@
 
 </div>
 
-@Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))
+@*@Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))*@

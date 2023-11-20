@@ -123,7 +123,7 @@
 
             @{Html.RenderAction("DMSanPham", "Product"); }
 
-            @*<div class="row products-list">
+            <div class="row products-list">
 
                 @foreach (var pro in Model)
                 {
@@ -153,11 +153,14 @@
                         <div class="product-bottom text-center">
                             <h5>@Html.DisplayFor(Model => pro.namePro)</h5>
                             <h6>@Html.DisplayFor(Model => pro.pricePro)đ</h6>
+
+                            <a href="/ShoppingCart/AddToCart/@pro.codePro" class="btn btn-success">Buy</a>
+
                         </div>
                     </div>
                 }
 
-            </div>*@
+            </div>
 
             </div>
             @*<div class="dlink">
