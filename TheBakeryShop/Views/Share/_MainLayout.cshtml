@@ -160,7 +160,7 @@
                 <div class="header-item item-right">
 
                     <i class="fi fi-br-search search-icon" id="searchIcon"></i>
-                    <i class="fi fi-br-shopping-cart cart-icon"></i>
+                    <a href="@Url.Action("ShowCart","ShoppingCart")"><i class="fi fi-br-shopping-cart cart-icon"></i></a>@{Html.RenderAction("BagCart", "ShoppingCart"); }
                     <i class="fi fi-br-user user-icon"></i>
                     <!-- mobile menu trigger -->
                     <div class="mobile-menu-trigger">
@@ -208,55 +208,26 @@
             </div>
         </div>
     </div>
-    <div class="cart-sidebar">
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <span>
-                    <a href="/ShoppingCart/ShowCart">
-                        <i class="fi fi-br-shopping-cart cart-icon"></i>                    </a>
-                </span>
-                @Html.Action("BagCart", "ShoppingCart");
-            </li>
-        </ul>
-    </div>
     @*<div class="cart-sidebar">
         <span class="close-cart"><i class="fi fi-br-cross"></i></span>
         <div class="cart-title">
-            <h4>Giỏ hàng</h4>
+            <h4>Giỏ hàng @{Html.RenderAction("BagCart", "ShoppingCart"); }</h4>
         </div>
         <div class="cart-body">
             <div class="cart-item">
-                <div class="img">
-                    <img src="~/MyContent/Image/banh-ngot/cupcake/candy-cupcakes.jpg" />
-                </div>
-                <div class="text">
-                    <span>Số lượng: x1</span>
-                    <h5>Candy Cupcakes</h5>
-                    <h6>25.000đ</h6>
-                </div>
-            </div>
-            <div class="cart-item">
-                <div class="img">
-                    <img src="~/MyContent/Image/banh-ngot/cupcake/candy-cupcakes.jpg" />
-                </div>
-                <div class="text">
-                    <span>Số lượng: </span>
-                    <h5>Candy Cupcakes</h5>
-                    <h6>25.000đ</h6>
-                </div>
-            </div>
-            <div class="cart-item">
-                <div class="img">
-                    <img src="~/MyContent/Image/banh-ngot/cupcake/candy-cupcakes.jpg" />
-                </div>
-                <div class="text">
-                    <span>Số lượng: </span>
-                    <h5>Candy Cupcakes</h5>
-                    <h6>25.000đ</h6>
-                </div>
-            </div>
+        <div class="img">
+            <img src="~/MyContent/Image/banh-ngot/cupcake/candy-cupcakes.jpg" />
+        </div>
+        <div class="text">
+            <span>Số lượng: x1</span>
+            <h5>Candy Cupcakes</h5>
+            <h6>25.000đ</h6>
+        </div>
+        </div>
             <div class="button-pay">
-                <button type="button">Thanh toán</button>
+                
+                <a href="@Url.Action("ShowCart","ShoppingCart")" class="btn-cart">Xem giỏ hàng</a>
+              
             </div>
         </div>
     </div>*@

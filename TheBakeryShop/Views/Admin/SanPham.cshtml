@@ -1,7 +1,4 @@
-﻿@*@using TheBakeryShop.Models;
-@using PagedList.Mvc;
-@model PagedList.PagedList<tbProduct>*@
-@model IEnumerable<TheBakeryShop.Models.tbProduct>
+﻿@model IEnumerable<TheBakeryShop.Models.tbProduct>
 
 @{
     ViewBag.Title = "Quản lý sản phẩm";
@@ -55,7 +52,8 @@
                 @Html.DisplayFor(modelItem => item.sizePro)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.imagePro)
+                @*@Html.DisplayFor(modelItem => item.imagePro)*@
+                <img src="@Url.Content(item.imagePro)" style="height:150px;width:150px;justify-content:center;justify-items:center;"/>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.statePro)

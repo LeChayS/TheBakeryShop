@@ -18,8 +18,8 @@ font-family: 'Playpen Sans', cursive; tựa nhỏ
     padding: 6px 14px;
     z-index: 99;
     transition: all 0.5s ease;
-    font-family: 'Comfortaa', sans-serif;
-    background:black;
+    font-family: 'Asap', sans-serif;
+    background: black;
 }
 .sidebar.open{
   width: 250px;
@@ -188,7 +188,6 @@ font-family: 'Playpen Sans', cursive; tựa nhỏ
   width: calc(100% - 250px);
 }
 .home-section .text{
-  display: inline-block;
   margin: 18px
 }
 @media (max-width: 420px) {

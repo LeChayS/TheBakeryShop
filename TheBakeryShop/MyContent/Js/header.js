@@ -91,15 +91,15 @@ popup.addEventListener("click", () => {
 });
 
 /*cart*/
-var cart_btn = document.querySelector(".cart-icon");
-var cart_sidebar = document.querySelector(".cart-sidebar");
-var closeCart = document.querySelector(".close-cart");
+//var cart_btn = document.querySelector(".cart-icon");
+//var cart_sidebar = document.querySelector(".cart-sidebar");
+//var closeCart = document.querySelector(".close-cart");
 
-cart_btn.onclick = function () {
-    cart_sidebar.style.right = "0";
-};
-closeCart.onclick = function () {
-    cart_sidebar.style.right = "-400px";
+//cart_btn.onclick = function () {
+//    cart_sidebar.style.right = "0";
+//};
+//closeCart.onclick = function () {
+//    cart_sidebar.style.right = "-400px";
 };
 
 

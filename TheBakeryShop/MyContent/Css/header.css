@@ -502,7 +502,7 @@ ul {
     color: gray;
 }
 
-.search-wrap .search-box .btn-search {
+.search-wrap .search-box button{
     position: absolute;
     top: 0px;
     right: 0px;
@@ -515,11 +515,11 @@ ul {
     border-top-left-radius: 0;
 }
 
-.search-wrap .search-box .btn-search i {
-    position: absolute;
+.search-wrap .search-box button i{
+    /*position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);*/
     color: white;
     font-size: 20px;
 }
@@ -543,9 +543,9 @@ ul {
     color: peru;
 }
 
-.search-wrap .search-box .btn-search:hover {
+/*.search-wrap .search-box button:hover {
     background: rgb(175, 114, 53);
-}
+}*/
 
 /*popup sign in*/
 .popup {
@@ -717,7 +717,7 @@ ul {
 }
 
 /*giỏ hàng*/
-.cart-sidebar {
+./*cart-sidebar {
     position: fixed;
     right: -400px;
     top: 0;
@@ -792,26 +792,34 @@ ul {
     cursor: pointer;
     }
 
-.cart-sidebar .button-pay{
-    margin-top: 10px;
-    width: 350px;
-    border-top: 2px solid black;
-    padding-top: 10px;
-}
 
-.cart-sidebar button {
-    background-color: peru;
-    border: none;
-    color: white;
-    height: 50px;
-    width: 340px;
-    margin-left: 5px;
-    margin-right: 5px;
-    border-radius: 10px;
-    font-weight: bold;
-}
 
-.cart-sidebar .button-pay button:hover {
-    color: black;
-    background-color: rgb(204, 147, 91);
-}
+
+
+
+    .cart-sidebar .button-pay {
+        margin-top: 10px;
+        width: 350px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .cart-sidebar .button-pay {
+        background-color: peru;
+        border: none;
+        color: white;
+        height: 50px;
+        width: 340px;
+        margin-left: 5px;
+        margin-right: 5px;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+
+    .cart-sidebar .cart-body .button-pay a {
+        color: white;
+        text-decoration: none;
+        padding: 15px 90px 15px 90px;
+    }
+
+*/

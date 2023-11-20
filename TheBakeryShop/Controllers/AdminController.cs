@@ -70,22 +70,9 @@ namespace TheBakeryShop.Controllers
         }
 
 
-        public ActionResult SanPham(/*string _style, int? page, double min = double.MinValue, double max = double.MaxValue*/)
+        public ActionResult SanPham()
         {
             return View(db.tbProducts.ToList());
-            //int pageSize = 12;
-            //int pageNum = (page ?? 1);
-            //if (_style == null)
-            //{
-            //    var productList = db.tbProducts.OrderByDescending(x => x.namePro);
-            //    return View(productList.ToPagedList(pageNum, pageSize));
-            //}
-            //else
-            //{
-            //    var productList = db.tbProducts.OrderByDescending(x => x.namePro)
-            //        .Where(p => p.codeStyle == _style);
-            //    return View(productList);
-            //}
         }
         public ActionResult CreateSP()
         {
@@ -98,31 +85,34 @@ namespace TheBakeryShop.Controllers
             db.SaveChanges();
             return RedirectToAction("SanPham");
         }
-        public ActionResult DetailSP(string code)
+        public ActionResult DetailSP(string codeP)
         {
-            return View(db.tbProducts.Where(s => s.codePro == code).FirstOrDefault());
+            var pro = db.tbProducts.Where(m => m.codePro == codeP).FirstOrDefault();
+            return View(pro);
         }
-        public ActionResult EditSP(string code)
+        public ActionResult EditSP(string codeP)
         {
-            return View(db.tbProducts.Where(s => s.codePro == code).FirstOrDefault());
+            var pro = db.tbProducts.Where(m => m.codePro == codeP).FirstOrDefault();
+            return View(pro);
         }
         [HttpPost]
-        public ActionResult EditSP(string code,tbProduct product)
+        public ActionResult EditSP(string codeP,tbProduct product)
         {
             db.Entry(product).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("SanPham");
         }
-        public ActionResult DeleteSP(string code)
+        public ActionResult DeleteSP(string codeP)
         {
-            return View(db.tbProducts.Where(s => s.codePro == code).FirstOrDefault());
+            var pro = db.tbProducts.Where(m => m.codePro == codeP).FirstOrDefault();
+            return View(pro);
         }
         [HttpPost]
-        public ActionResult DeleteSP(string code, tbProduct product)
+        public ActionResult DeleteSP(string codeP, tbProduct product)
         {
             try
             {
-                product = db.tbProducts.Where(s => s.codePro == code).FirstOrDefault();
+                product = db.tbProducts.Where(s => s.codePro == codeP).FirstOrDefault();
                 db.tbProducts.Remove(product);
                 db.SaveChanges();
                 return RedirectToAction("SanPham");

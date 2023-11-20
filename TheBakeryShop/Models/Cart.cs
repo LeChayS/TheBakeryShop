@@ -38,15 +38,15 @@ namespace TheBakeryShop.Models
             var total = items.Sum(s => s._quantity * s._product.pricePro);
             return (decimal)total;
         }
-        public void Update_quantity(string id, int _new_quan)
+        public void Update_quantity(string code, int _new_quan)
         {
-            var item = items.Find(s => s._product.codePro == id);
+            var item = items.Find(s => s._product.codePro == code);
             if (item != null)
                 item._quantity = _new_quan;
         }
-        public void Remove_CartItem(string id)
+        public void Remove_CartItem(string code)
         {
-            items.RemoveAll(s => s._product.codePro == id);
+            items.RemoveAll(s => s._product.codePro == code);
         }
         public void clearCart()
         {

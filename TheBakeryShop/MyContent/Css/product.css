@@ -1,11 +1,14 @@
-/*font-family: 'Comfortaa', sans-serif;
-font-family: 'Merienda', cursive;
-font-family: 'Playpen Sans', cursive;*/
-body{
-	line-height: 1.5;
-	font-weight: 400;
-	overflow-x: hidden;
-	font-family: 'Comfortaa', sans-serif;
+﻿/*
+font-family: 'Asap', sans-serif; nd trang
+font-family: 'Comfortaa', sans-serif; header + footer
+font-family: 'Merienda', cursive; tựa to
+font-family: 'Playpen Sans', cursive; tựa nhỏ
+*/
+body {
+    line-height: 1.5;
+    font-weight: 400;
+    overflow-x: hidden;
+    font-family: 'Asap', sans-serif;
 }
 *{
 	margin:0;

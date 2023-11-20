@@ -15,7 +15,7 @@ namespace TheBakeryShop.Controllers
         {
             if (Session["Cart"] == null)
                 //return RedirectToAction("ShowCart", "ShoppingCart");
-            return View("EmptyCart");
+                return View("EmptyCart");
             Cart _cart = Session["Cart"] as Cart;
             return View(_cart);
         }
