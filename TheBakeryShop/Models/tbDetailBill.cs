@@ -16,17 +16,13 @@ namespace TheBakeryShop.Models
 
     public partial class tbDetailBill
     {
-        [DisplayName("Mã hóa đơn")]
+        [DisplayName("Mã đơn hàng")]
         [Required(ErrorMessage = "not empty")]
         public int idBill { get; set; }
 
-        [DisplayName("Mã sản phẩm")]
+        [DisplayName("Mã SP")]
         [Required(ErrorMessage = "not empty")]
         public string codePro { get; set; }
-
-        [DisplayName("Giá sản phẩm")]
-        [Required(ErrorMessage = "not empty")]
-        public Nullable<double> priceProBuying { get; set; }
 
         [DisplayName("Số lượng")]
         [Required(ErrorMessage = "not empty")]
@@ -36,6 +32,9 @@ namespace TheBakeryShop.Models
         [Required(ErrorMessage = "not empty")]
         public Nullable<double> totalMoney { get; set; }
 
+        [DisplayName("Giá")]
+        [Required(ErrorMessage = "not empty")]
+        public Nullable<double> priceProBuying { get; set; }
     
         public virtual tbBill tbBill { get; set; }
         public virtual tbProduct tbProduct { get; set; }

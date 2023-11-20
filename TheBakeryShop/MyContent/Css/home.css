@@ -1,6 +1,9 @@
-﻿/*font-family: 'Comfortaa', sans-serif;
-font-family: 'Merienda', cursive;
-font-family: 'Playpen Sans', cursive;*/
+﻿/*
+font-family: 'Asap', sans-serif; nd trang
+font-family: 'Comfortaa', sans-serif; header + footer
+font-family: 'Merienda', cursive; tựa to
+font-family: 'Playpen Sans', cursive; tựa nhỏ
+*/
 /*background trên*/
 .resbg {
     width: 100%;
@@ -9,10 +12,11 @@ font-family: 'Playpen Sans', cursive;*/
     -webkit-filter: blur(2px); */
 }
 
-/*body {
-    margin: 0;
-    padding: 0;
-}*/
+body {
+    /*margin: 0;
+    padding: 0;*/
+    font-family: 'Asap', sans-serif;
+}
 
 .title {
     color: #000;
@@ -38,9 +42,9 @@ font-family: 'Playpen Sans', cursive;*/
     cursor: pointer;
 }
 
-    .btnXem:hover {
-        background-color: white;
-    }
+.btnXem:hover {
+    background-color: white;
+}
 
 .container-fluid .col-lg-4 {
     text-align: center;

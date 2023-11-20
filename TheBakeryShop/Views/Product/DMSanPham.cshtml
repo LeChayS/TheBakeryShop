@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "DMSanPham";
-    //Layout = "~/Views/Share/_MainLayout.cshtml";
+    Layout = null;
 }
 @using TheBakeryShop.Models;
 @using PagedList.Mvc;
@@ -27,7 +27,7 @@
 
                 <div class="overlay">
                     <button type="button" class="btn btn-secondary" title="quick shop">
-                        <a href="@Url.Action("ChiTietSanPham", "Product", new {id = pro.codePro} )" style="text-decoration:none;color:white;">
+                        <a href="@Url.Action("ChiTietSanPham", "Product", new {codeP = pro.codePro} )" style="text-decoration:none;color:white;">
                             <i class="fi fi-br-search search-icon"></i>
                         </a>
                     </button>

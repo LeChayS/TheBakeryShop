@@ -24,10 +24,9 @@ namespace TheBakeryShop.Models
         }
 
         [DisplayName("Mã người dùng")]
-        [Required(ErrorMessage = "not empty")]
         public int idUser { get; set; }
 
-        [DisplayName("Tên người dùng")]
+        [DisplayName("Tên đăng nhập")]
         [Required(ErrorMessage = "Không được để trống tên đăng nhập")]
         public string userName { get; set; }
 
@@ -35,15 +34,15 @@ namespace TheBakeryShop.Models
         [Required(ErrorMessage = "Không được để trống mật khẩu")]
         public string userPass { get; set; }
 
+        [DisplayName("Mã thông tin")]
+        public string codeCus { get; set; }
+
         [NotMapped]
         [DisplayName("Nhập lại mật khẩu")]
         [Required(ErrorMessage = "Không được để trống")]
         [Compare("userPass")]
         public string RePass { get; set; }
 
-        public string codeCus { get; set; }
-        
-    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbBill> tbBills { get; set; }
         public virtual tbCustomer tbCustomer { get; set; }

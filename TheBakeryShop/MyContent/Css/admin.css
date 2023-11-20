@@ -1,18 +1,25 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+﻿/*
+font-family: 'Asap', sans-serif; nd trang
+font-family: 'Comfortaa', sans-serif; header + footer
+font-family: 'Merienda', cursive; tựa to
+font-family: 'Playpen Sans', cursive; tựa nhỏ
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.sidebar{
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 78px;
-  background: #11101D;
-  padding: 6px 14px;
-  z-index: 99;
-  transition: all 0.5s ease;
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 78px;
+    padding: 6px 14px;
+    z-index: 99;
+    transition: all 0.5s ease;
+    font-family: 'Comfortaa', sans-serif;
+    background:black;
 }
 .sidebar.open{
   width: 250px;
@@ -64,6 +71,7 @@
 .sidebar .nav-list{
   margin-top: 20px;
   height: 100%;
+  padding-left:0;
 }
 .sidebar li{
   position: relative;
@@ -146,21 +154,7 @@
   overflow: hidden;
 }
 .sidebar.open li.profile{
-  width: 225px;
-}
-.sidebar li .profile-details{
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-.sidebar li.profile .name{
-  font-size: 15px;
-  font-weight: 400;
-  color: #fff;
- 
-}
-.sidebar li.profile .job{
-  font-size: 12px;
+  width: 250px;
 }
 .sidebar .profile #log_out{
   position: absolute;
@@ -179,15 +173,15 @@
   width: 50px;
   background: none;
 }
-.home-section{
-  position: relative;
-  background: #E4E9F7;
-  min-height: 100vh;
-  top: 0;
-  left: 78px;
-  width: calc(100% - 78px);
-  transition: all 0.5s ease;
-  z-index: 2;
+.home-section {
+    position: relative;
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+    font-family: 'Asap', sans-serif;
 }
 .sidebar.open ~ .home-section{
   left: 250px;
@@ -195,9 +189,6 @@
 }
 .home-section .text{
   display: inline-block;
-  color: #11101d;
-  font-size: 25px;
-  font-weight: 500;
   margin: 18px
 }
 @media (max-width: 420px) {

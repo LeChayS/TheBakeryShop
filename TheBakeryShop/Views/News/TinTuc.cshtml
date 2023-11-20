@@ -75,16 +75,16 @@
                     <h3 id="fm-name">Danh mục</h3>
                     <ul class="nav nav-pills flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">@Html.ActionLink("Trang chủ", "TrangChu", "Home")</a>
+                            <a class="nav-link" href="@Url.Action("TrangChu","Home")">Trang chủ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">@Html.ActionLink("Sản phẩm", "SanPham", "Product")</a>
+                            <a class="nav-link" href="@Url.Action("SanPham","Product")">Sản phẩm</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">@Html.ActionLink("Tin tức", "TinTuc", "News")</a>
+                            <a class="nav-link active" href="@Url.Action("TinTuc","News")">Tin tức</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">@Html.ActionLink("Liên hệ", "LienHe", "Contact")</a>
+                            <a class="nav-link" href="@Url.Action("LienHe","Contact")">Liên hệ</a>
                         </li>
                     </ul>
                 </div>

@@ -132,7 +132,6 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="MyContent\Css\admin.css" />
-    <Content Include="MyContent\Css\admin_trangchinh.css" />
     <Content Include="MyContent\Css\bg-news.css" />
     <Content Include="MyContent\Css\cart.css" />
     <Content Include="MyContent\Css\contact.css" />
@@ -328,6 +327,18 @@
     <Content Include="Views\Admin\DonHang.cshtml" />
     <Content Include="Views\Product\DMSanPham.cshtml" />
     <Content Include="Views\TimKiem\KQTimKiem.cshtml" />
+    <Content Include="Views\Admin\CreateND.cshtml" />
+    <Content Include="Views\Admin\DetailND.cshtml" />
+    <Content Include="Views\Admin\EditND.cshtml" />
+    <Content Include="Views\Admin\DeleteND.cshtml" />
+    <Content Include="Views\Admin\CreateSP.cshtml" />
+    <Content Include="Views\Admin\DetailSP.cshtml" />
+    <Content Include="Views\Admin\EditSP.cshtml" />
+    <Content Include="Views\Admin\DeleteSP.cshtml" />
+    <Content Include="Views\Admin\CreateDH.cshtml" />
+    <Content Include="Views\Admin\DetailDH.cshtml" />
+    <Content Include="Views\Admin\EditDH.cshtml" />
+    <Content Include="Views\Admin\DeleteDH.cshtml" />
     <Content Include="Views\ShoppingCart\ShowCart.cshtml" />
     <Content Include="Views\ShoppingCart\BagCart.cshtml" />
     <Content Include="Views\ShoppingCart\EmptyCart.cshtml" />
@@ -340,6 +351,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ShoppingCart\" />
     <Folder Include="Views\Client\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,41 @@
+﻿@model TheBakeryShop.Models.tbUser
+
+@{
+    ViewBag.Title = "Chi tiết người dùng";
+    Layout = "~/Views/Share/_AdminLayout.cshtml";
+}
+
+<h2>Chi tiết người dùng</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.userName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.userPass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userPass)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh Sửa", "EditND", new {  id = Model.idUser  },new {@class="btn btn-info"}) |
+    @Html.ActionLink("Quay lại", "NguoiDung",null,new {@class= "btn btn-secondary" })
+</p>

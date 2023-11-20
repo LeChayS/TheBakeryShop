@@ -1,0 +1,58 @@
+﻿@model TheBakeryShop.Models.tbDetailBill
+
+@{
+    ViewBag.Title = "Chi tiết đơn hàng";
+    Layout = "~/Views/Share/_AdminLayout.cshtml";
+}
+
+<h2>Chi tiết đơn hàng</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idBill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idBill)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codePro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codePro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quantityPro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantityPro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.totalMoney)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.totalMoney)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.priceProBuying)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.priceProBuying)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "EditDH", new {  id = Model.idBill },new { @class = "btn btn-info" }) |
+    @Html.ActionLink("Quay lại", "DonHang", null, new { @class = "btn btn-secondary" })Html.ActionLink("Back to List", "Index")
+</p>
