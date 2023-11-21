@@ -111,10 +111,10 @@ else
 
 
 
-@if (Model != null)
+@*@if (Model != null)
 {
     <table class="table">
-        @*<thread>
+        <thread>
             <tr>
                 <th>Tên sản phẩm</th>
                 <th>Hình sản phẩm</th>
@@ -150,11 +150,9 @@ else
                 }
 
 
-        </tbody>*@
+        </tbody>
         <tfoot>
-            @*<tr>
-                <td colspan="6" style="text-align:right"> Tổng tiền: @Model.Total_money() </td>
-            </tr>*@
+           
             <tr>
                 <td colspan="2"></td>
                 <td colspan="4">
@@ -182,5 +180,5 @@ else
 else
 {
     @Html.Partial("EmptyCart");
-}
+}*@
 

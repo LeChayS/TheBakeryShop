@@ -55,7 +55,8 @@
         </dt>
 
         <dd>
-            <img src = "@Url.Content(Model.imagePro)" style = "height:150px;width:150px;justify-content:center;justify-items:center;" />
+            @*@Html.DisplayFor(model => model.imagePro)*@
+            <img src="@Url.Content(Model.imagePro)" style="height:150px;width:150px;justify-content:center;justify-items:center;" />
         </dd>
 
         <dt>
@@ -77,6 +78,6 @@
     </dl>
 </div>
         <p>
-        @Html.ActionLink("Chỉnh sửa", "EditSP", new {  id = Model.codePro }, new {@class="btn btn-info"}) |
+        @Html.ActionLink("Chỉnh sửa", "EditSP", new { id = Model.codePro }, new {@class="btn btn-info"}) |
         @Html.ActionLink("Quay lại", "SanPham", null, new { @class = "btn btn-secondary" })
          </p>

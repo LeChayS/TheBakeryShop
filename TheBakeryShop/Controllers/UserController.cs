@@ -36,9 +36,12 @@ namespace TheBakeryShop.Controllers
                 }
                 else
                 {
+                    
                     Session["userName"] = user.userName;
                     return RedirectToAction("TrangChu","Home");
+                    
                 }
+                
             }   
             catch 
             {

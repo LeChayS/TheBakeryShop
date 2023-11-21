@@ -40,26 +40,26 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.codePro)
+                @Html.DisplayFor(model => item.codePro)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.namePro)
+                @Html.DisplayFor(model => item.namePro)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.pricePro)
+                @Html.DisplayFor(model => item.pricePro)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.sizePro)
+                @Html.DisplayFor(model => item.sizePro)
             </td>
             <td>
                 @*@Html.DisplayFor(modelItem => item.imagePro)*@
                 <img src="@Url.Content(item.imagePro)" style="height:150px;width:150px;justify-content:center;justify-items:center;"/>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.statePro)
+                @Html.DisplayFor(model => item.statePro)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.codeStyle)
+                @Html.DisplayFor(model => item.codeStyle)
             </td>
             <td>
                 @Html.ActionLink("Chỉnh sửa", "EditSP", new { id = item.codePro }, new { @class = "btn btn-info" }) |

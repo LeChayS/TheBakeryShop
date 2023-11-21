@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DBBakeryShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DBBakeryShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tbBill">
           <Key>
             <PropertyRef Name="idBill" />
@@ -64,7 +64,7 @@
           <Property Name="userPass" Type="nvarchar(max)" />
           <Property Name="codeCus" Type="char" MaxLength="5" />
         </EntityType>
-        <Association Name="FK__tbBill__idUser__534D60F1">
+        <Association Name="FK__tbBill__idUser__412EB0B6">
           <End Role="tbUser" Type="Self.tbUser" Multiplicity="1" />
           <End Role="tbBill" Type="Self.tbBill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -76,7 +76,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbDetailB__codeP__571DF1D5">
+        <Association Name="FK__tbDetailB__codeP__44FF419A">
           <End Role="tbProduct" Type="Self.tbProduct" Multiplicity="1" />
           <End Role="tbDetailBill" Type="Self.tbDetailBill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -88,7 +88,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbDetailB__idBil__5629CD9C">
+        <Association Name="FK__tbDetailB__idBil__440B1D61">
           <End Role="tbBill" Type="Self.tbBill" Multiplicity="1" />
           <End Role="tbDetailBill" Type="Self.tbDetailBill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -100,7 +100,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbProduct__codeS__5070F446">
+        <Association Name="FK__tbProduct__codeS__3E52440B">
           <End Role="tbStyle" Type="Self.tbStyle" Multiplicity="1" />
           <End Role="tbProduct" Type="Self.tbProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -112,7 +112,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbUser__codeCus__4D94879B">
+        <Association Name="FK__tbUser__codeCus__3B75D760">
           <End Role="tbCustomer" Type="Self.tbCustomer" Multiplicity="0..1" />
           <End Role="tbUser" Type="Self.tbUser" Multiplicity="*" />
           <ReferentialConstraint>
@@ -131,29 +131,28 @@
           <EntitySet Name="tbProduct" EntityType="Self.tbProduct" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbStyle" EntityType="Self.tbStyle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbUser" EntityType="Self.tbUser" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__tbBill__idUser__534D60F1" Association="Self.FK__tbBill__idUser__534D60F1">
+          <AssociationSet Name="FK__tbBill__idUser__412EB0B6" Association="Self.FK__tbBill__idUser__412EB0B6">
             <End Role="tbUser" EntitySet="tbUser" />
             <End Role="tbBill" EntitySet="tbBill" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbDetailB__codeP__571DF1D5" Association="Self.FK__tbDetailB__codeP__571DF1D5">
+          <AssociationSet Name="FK__tbDetailB__codeP__44FF419A" Association="Self.FK__tbDetailB__codeP__44FF419A">
             <End Role="tbProduct" EntitySet="tbProduct" />
             <End Role="tbDetailBill" EntitySet="tbDetailBill" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbDetailB__idBil__5629CD9C" Association="Self.FK__tbDetailB__idBil__5629CD9C">
+          <AssociationSet Name="FK__tbDetailB__idBil__440B1D61" Association="Self.FK__tbDetailB__idBil__440B1D61">
             <End Role="tbBill" EntitySet="tbBill" />
             <End Role="tbDetailBill" EntitySet="tbDetailBill" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbProduct__codeS__5070F446" Association="Self.FK__tbProduct__codeS__5070F446">
+          <AssociationSet Name="FK__tbProduct__codeS__3E52440B" Association="Self.FK__tbProduct__codeS__3E52440B">
             <End Role="tbStyle" EntitySet="tbStyle" />
             <End Role="tbProduct" EntitySet="tbProduct" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbUser__codeCus__4D94879B" Association="Self.FK__tbUser__codeCus__4D94879B">
+          <AssociationSet Name="FK__tbUser__codeCus__3B75D760" Association="Self.FK__tbUser__codeCus__3B75D760">
             <End Role="tbCustomer" EntitySet="tbCustomer" />
             <End Role="tbUser" EntitySet="tbUser" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DBBakeryShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">

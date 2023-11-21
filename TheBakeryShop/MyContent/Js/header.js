@@ -100,6 +100,6 @@ popup.addEventListener("click", () => {
 //};
 //closeCart.onclick = function () {
 //    cart_sidebar.style.right = "-400px";
-};
+/*};*/
 
 
