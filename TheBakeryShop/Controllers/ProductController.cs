@@ -20,6 +20,7 @@ namespace TheBakeryShop.Controllers
             //    return View(db.tbProducts.Where(s => s.codeStyle == style));
             //else
             //    return View(db.tbProducts.ToList());
+
             ////Phân trang
             //int pageSize = 10;
             //int pageNumber = (page ?? 1);
