@@ -17,9 +17,6 @@ namespace TheBakeryShop.Controllers
         {
             return View();
         }
-       
-        
-
         public ActionResult NguoiDung()
         {
             return View(db.tbUsers.ToList());
@@ -69,8 +66,6 @@ namespace TheBakeryShop.Controllers
                 return Content("Không thể xóa người dùng");
             }
         }
-
-
         public ActionResult SanPham()
         {
             return View(db.tbProducts.ToList());
@@ -123,10 +118,6 @@ namespace TheBakeryShop.Controllers
                 return Content("Không thể xóa sản phẩm");
             }
         }
-
-
-
-
 
         public ActionResult DonHang()
         {
